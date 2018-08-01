@@ -4,20 +4,20 @@ import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/map';
 
 import { baseURL } from './Constants';
-import { Trainer } from '../models/Trainer';
+import { Customer } from '../models/Customer';
 
 @Injectable()
-export class TrainersService {
+export class CustomersService {
 
   constructor(private http: Http) { }
 
-  getTrainers(): Observable<Trainer[]> {
-    return this.http.get(baseURL + 'trainers/')
+  getCustomers(): Observable<Customer[]> {
+    return this.http.get(baseURL + 'customers/')
       .map(res => res.json() || {});
   }
 
-  getTrainer(id: number): Observable<Trainer> {
-    return this.http.get(baseURL + 'trainers/' + id)
+  getCustomer(id: number): Observable<Customer> {
+    return this.http.get(baseURL + 'customers/' + id)
       .map(res => res.json() || {});
   }
 

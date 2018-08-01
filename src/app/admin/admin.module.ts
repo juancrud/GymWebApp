@@ -8,7 +8,6 @@ import { MeasurementsComponent } from './measurements/measurements.component';
 import { CustomersComponent } from './customers/customers.component';
 import { TrainersComponent } from './trainers/trainers.component';
 
-
 @NgModule({
   imports: [
     CommonModule,
