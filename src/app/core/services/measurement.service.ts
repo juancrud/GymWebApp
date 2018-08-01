@@ -4,7 +4,7 @@ import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/map';
 
 import { baseURL } from './Constants';
-import { Measurement } from '../models/measurement';
+import { Measurement } from '../models/Measurement';
 
 @Injectable()
 export class MeasurementService {
