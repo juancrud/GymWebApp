@@ -8,6 +8,7 @@ import { Test1Component } from './test1/test1.component';
 import { Test2Component } from './test2/test2.component';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
+import { SidebarComponent } from './sidebar/sidebar.component';
 
 @NgModule({
   imports: [
@@ -17,14 +18,16 @@ import { FooterComponent } from './footer/footer.component';
   declarations: [
     HeaderComponent,
     FooterComponent,
+    SidebarComponent,
     HomeComponent,
     Test1Component,
-    Test2Component
+    Test2Component,
   ],
   exports:[
     RouterModule,
     HeaderComponent, 
-    FooterComponent
+    FooterComponent,
+    SidebarComponent
   ],
   providers: [
 

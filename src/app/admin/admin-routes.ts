@@ -3,8 +3,13 @@ import { Routes } from '@angular/router';
 import { AdminComponent } from './admin.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { MeasurementsComponent } from './measurements/measurements.component';
+import { TrainersComponent } from './trainers/trainers.component';
+import { CustomersComponent } from './customers/customers.component';
 
 export const adminRoutes: Routes = [
     { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
-    { path: 'dashboard', component: AdminComponent, children: [ { path: '', component: DashboardComponent } ]  }
+    { path: 'dashboard', component: AdminComponent, children: [ { path: '', component: DashboardComponent } ]  },
+    { path: 'trainers', component: AdminComponent, children: [ { path: '', component: TrainersComponent } ]  },
+    { path: 'customers', component: AdminComponent, children: [ { path: '', component: CustomersComponent } ]  },
+    { path: 'measurements', component: AdminComponent, children: [ { path: '', component: MeasurementsComponent } ]  },
 ];

@@ -5,6 +5,8 @@ import { AdminRoutingModule } from './admin-routing.module';
 import { AdminComponent } from './admin.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { MeasurementsComponent } from './measurements/measurements.component';
+import { CustomersComponent } from './customers/customers.component';
+import { TrainersComponent } from './trainers/trainers.component';
 
 
 @NgModule({
@@ -15,7 +17,9 @@ import { MeasurementsComponent } from './measurements/measurements.component';
   declarations: [
     AdminComponent, 
     DashboardComponent,
-    MeasurementsComponent
+    MeasurementsComponent,
+    CustomersComponent,
+    TrainersComponent
   ]
 })
 export class AdminModule { }

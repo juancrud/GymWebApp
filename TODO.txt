@@ -1,2 +1,2 @@
-Heroku deploy
-Adding template
+- Add bootstrap template
+- favicon not working on heroku

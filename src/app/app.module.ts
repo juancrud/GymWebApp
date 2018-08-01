@@ -1,8 +1,8 @@
-import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
-import { AppComponent } from './app.component';
+import { BrowserModule } from '@angular/platform-browser';
 import { CoreModule } from './core/core.module';
+import { AngularFontAwesomeModule } from 'angular-font-awesome';
+import { AppComponent } from './app.component';
 
 @NgModule({
   declarations: [
@@ -11,6 +11,7 @@ import { CoreModule } from './core/core.module';
   imports: [
     BrowserModule,
     CoreModule,
+    AngularFontAwesomeModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
