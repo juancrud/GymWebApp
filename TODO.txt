@@ -1,2 +1,10 @@
-- Add bootstrap template
+- crud operations on trainers
+- crud operations on customers
+- crud operations on measurements
+- improve services implementations
+- add admin/exerciseCategory and admin/exercises modules
+- admin dashboard
 - favicon not working on heroku
+
+-Trainers module
+-Customers module

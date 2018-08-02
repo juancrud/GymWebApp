@@ -8,13 +8,13 @@ import { TrainerService } from '../../core/services/trainer.service';
   styleUrls: ['./trainers.component.scss']
 })
 export class TrainersComponent implements OnInit {
-  trainers: Trainer[] = Trainer[0];
+  trainers: Trainer[];
 
   constructor(private trainerService: TrainerService) { }
 
   ngOnInit() {
     this.trainerService.getTrainers()
-      .subscribe(trainers => this.trainers = trainers)
+      .subscribe(trainers => this.trainers = trainers);
 
   }
 

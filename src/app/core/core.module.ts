@@ -8,9 +8,10 @@ import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
 
-import { TrainerService } from './services/trainer.service';
 import { HttpModule } from '../../../node_modules/@angular/http';
-//import { MeasurementService } from './services/measurement.service';
+import { TrainerService } from './services/trainer.service';
+import { MeasurementService } from './services/measurement.service';
+import { CustomerService } from './services/customer.service';
 
 @NgModule({
   imports: [
@@ -32,7 +33,8 @@ import { HttpModule } from '../../../node_modules/@angular/http';
   ],
   providers: [
     TrainerService,
-    //MeasurementService
+    MeasurementService,
+    CustomerService
   ]
 })
 export class CoreModule { }

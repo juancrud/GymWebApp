@@ -1,3 +1,9 @@
-<p>
-  This is Admin Measurements component.
-</p>
+<div class="container">
+    <h1>Measurements</h1>
+    <ul>
+      <li *ngFor="let measurement of measurements">
+        {{ measurement.name }}
+      </li>
+    </ul>
+  </div>
+  
