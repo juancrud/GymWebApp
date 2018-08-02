@@ -19,6 +19,8 @@ import { TrainersComponent } from './trainers/trainers.component';
     MeasurementsComponent,
     CustomersComponent,
     TrainersComponent
+  ],
+  providers: [
   ]
 })
 export class AdminModule { }

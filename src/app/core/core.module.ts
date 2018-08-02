@@ -8,10 +8,15 @@ import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
 
+import { TrainerService } from './services/trainer.service';
+import { HttpModule } from '../../../node_modules/@angular/http';
+//import { MeasurementService } from './services/measurement.service';
+
 @NgModule({
   imports: [
     CommonModule,
-    CoreRoutingModule
+    CoreRoutingModule,
+    HttpModule
   ],
   declarations: [
     HeaderComponent,
@@ -26,7 +31,8 @@ import { SidebarComponent } from './sidebar/sidebar.component';
     SidebarComponent
   ],
   providers: [
-
+    TrainerService,
+    //MeasurementService
   ]
 })
 export class CoreModule { }

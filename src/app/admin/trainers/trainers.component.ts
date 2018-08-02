@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Trainer } from '../../core/models/Trainer';
+import { TrainerService } from '../../core/services/trainer.service';
 
 @Component({
   selector: 'app-trainers',
@@ -6,10 +8,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./trainers.component.scss']
 })
 export class TrainersComponent implements OnInit {
+  trainers: Trainer[] = Trainer[0];
 
-  constructor() { }
+  constructor(private trainerService: TrainerService) { }
 
   ngOnInit() {
+    this.trainerService.getTrainers()
+      .subscribe(trainers => this.trainers = trainers)
+
   }
 
 }

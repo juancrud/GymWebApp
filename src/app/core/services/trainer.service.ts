@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Http, Response } from '@angular/http'
+import { Http, RequestOptions, Headers } from '@angular/http'
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/map';
 
@@ -7,8 +7,8 @@ import { baseURL } from './Constants';
 import { Trainer } from '../models/Trainer';
 
 @Injectable()
-export class TrainersService {
-
+export class TrainerService {
+  
   constructor(private http: Http) { }
 
   getTrainers(): Observable<Trainer[]> {
