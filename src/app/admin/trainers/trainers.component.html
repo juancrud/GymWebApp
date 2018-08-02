@@ -1,8 +1,35 @@
 <div class="container">
   <h1>Trainers</h1>
-  <ul>
-    <li *ngFor="let trainer of trainers">
-      {{ trainer.name }}
-    </li>
-  </ul>
+
+  <div class="table-responsive">
+      <table class="table">
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Document Id</th>
+              <th>Gender</th>
+              <th>Birthday</th>
+              <th>Address</th>
+              <th>Email</th>
+              <th>Phone</th>
+              <th>Status</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let trainer of trainers">
+              <td>{{trainer.name}}</td>
+              <td>{{trainer.documentId}}</td>
+              <td>{{trainer.gender}}</td>
+              <td>{{trainer.birthDay}}</td>
+              <td>{{trainer.address}}</td>
+              <td>{{trainer.emailAddress}}</td>
+              <td>{{trainer.phoneNumber}}</td>
+              <td>{{trainer.status}}</td>
+              <td>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+  </div>
 </div>

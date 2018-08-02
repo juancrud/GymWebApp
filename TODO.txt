@@ -3,6 +3,8 @@
 - crud operations on measurements
 - improve services implementations
 - add admin/exerciseCategory and admin/exercises modules
+- handle httpErrors
+- handle httprequest latency
 - admin dashboard
 - favicon not working on heroku
 

@@ -12,13 +12,19 @@ export class TrainerService {
   constructor(private http: Http) { }
 
   getTrainers(): Observable<Trainer[]> {
-    return this.http.get(baseURL + 'trainers/')
-      .map(res => res.json() || {});
+    return this.http.get(baseURL + 'trainers/').map(res => res.json() || {});
   }
 
   getTrainer(id: number): Observable<Trainer> {
-    return this.http.get(baseURL + 'trainers/' + id)
-      .map(res => res.json() || {});
+    return this.http.get(baseURL + 'trainers/' + id).map(res => res.json() || {});
+  }
+
+  createTrainer(trainer: Trainer): Observable<Trainer> {
+    return this.http.put(baseURL + 'trainers/', trainer).map(res => res.json() || {});
+  }
+
+  updateTrainer(trainer: Trainer): Observable<Trainer> {
+    return this.http.post(baseURL + 'trainers/', trainer).map(res => res.json() || {});
   }
 
 }
