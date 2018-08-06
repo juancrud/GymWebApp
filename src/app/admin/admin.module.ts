@@ -7,6 +7,9 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { MeasurementsComponent } from './measurements/measurements.component';
 import { CustomersComponent } from './customers/customers.component';
 import { TrainersComponent } from './trainers/trainers.component';
+import { TrainerEditComponent } from './trainer-edit/trainer-edit.component';
+import { MeasurementEditComponent } from './measurement-edit/measurement-edit.component';
+import { CustomerEditComponent } from './customer-edit/customer-edit.component';
 
 @NgModule({
   imports: [
@@ -18,7 +21,10 @@ import { TrainersComponent } from './trainers/trainers.component';
     DashboardComponent,
     MeasurementsComponent,
     CustomersComponent,
-    TrainersComponent
+    TrainersComponent,
+    TrainerEditComponent,
+    MeasurementEditComponent,
+    CustomerEditComponent
   ],
   providers: [
   ]

@@ -1,9 +1,29 @@
 <div class="container">
-    <h1>Measurements</h1>
-    <ul>
-      <li *ngFor="let measurement of measurements">
-        {{ measurement.name }}
-      </li>
-    </ul>
+  <h1>Measurements</h1>
+
+  <div class="table-responsive">
+      <table class="table">
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Description</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let measurement of measurements">
+              <td>{{measurement.name}}</td>
+              <td>{{measurement.description}}</td>
+              <td>
+                  <a [routerLink]="['/admin/editMeasurement', measurement.id]">
+                    <i class="fa fa-pencil"></i>
+                  </a>
+                  <a routerLink="/admin/editMeasurement">
+                    <i class="fa fa-trash"></i>
+                  </a>
+              </td>
+            </tr>
+          </tbody>
+        </table>
   </div>
-  
+</div>

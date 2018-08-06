@@ -10,8 +10,11 @@ export class CustomerService {
   constructor(private http: Http) { }
 
   getCustomers(): Observable<Customer[]> {
-    return this.http.get(baseURL + 'customers/')
-      .map(res => res.json() || {});
+    return this.http.get(baseURL + 'customers/').map(res => res.json() || {});
+  }
+
+  getCustomer(id: number): Observable<Customer> {
+    return this.http.get(baseURL + 'customers/' + id).map(res => res.json() || {});
   }
 
 }
