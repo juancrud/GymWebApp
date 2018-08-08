@@ -13,8 +13,12 @@ export class MeasurementsComponent implements OnInit {
   constructor(private measurementService: MeasurementService) { }
 
   ngOnInit() {
-    this.measurementService.getMeasurements()
-      .subscribe(measurements => this.measurements = measurements);
+    this.measurementService.getMeasurements().subscribe(measurements => this.measurements = measurements);
+  }
+
+  deleteMeasurement(id: number) {
+    this.measurementService.deleteMeasurement(id)
+      .subscribe(m => this.measurements.splice(this.measurements.indexOf(m), 1));
   }
 
 }

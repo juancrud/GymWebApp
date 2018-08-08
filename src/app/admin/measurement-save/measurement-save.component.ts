@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Params } from '../../../../node_modules/@angular/router';
+import { ActivatedRoute, Params, Router } from '../../../../node_modules/@angular/router';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import 'rxjs/add/operator/switchMap';
 
@@ -34,7 +34,8 @@ export class MeasurementSaveComponent implements OnInit {
   constructor(
     private measurementService: MeasurementService, 
     private route: ActivatedRoute, 
-    private formBuilder: FormBuilder
+    private formBuilder: FormBuilder,
+    private router: Router
   ) {
     this.createForm();
   }
@@ -84,7 +85,7 @@ export class MeasurementSaveComponent implements OnInit {
 
   formSubmit() {
     this.measurementService.saveMeasurement(this.measurement)
-      .subscribe(m => console.log('sent'), e => console.log('error', e));
+      .subscribe(m => this.router.navigateByUrl("/admin/measurements"), e => console.log('error', e));
   };
 
   getTitle() {

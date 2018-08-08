@@ -1,7 +1,9 @@
 <div class="container">
   <h1>{{measurement.id ? "Edit Measurement" : "Add Measurement"}}</h1>
+
+  <!-- <p>Debugging info</p>
   <p>Measurement: {{measurement | json}}</p>
-  <p>Errors: {{formErrors | json}}</p>
+  <p>Errors: {{formErrors | json}}</p> -->
 
   <form novalidate [formGroup]="measurementSaveForm" (ngSubmit)="formSubmit()">
     <div class="form-row">
@@ -16,6 +18,6 @@
         <span [hidden]="!formErrors.description">{{formErrors.description}}</span>
       </div>
     </div>
-    <button type="submit" class="background-primary" [disabled]="measurementSaveForm.invalid">Save</button>
+    <button type="submit" class="btn btn-primary" [disabled]="measurementSaveForm.invalid">Save</button>
   </form>
 </div>

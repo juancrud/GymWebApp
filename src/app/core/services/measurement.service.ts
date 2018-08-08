@@ -27,4 +27,8 @@ export class MeasurementService {
       this.http.post(baseURL + 'measurements/', measurement).map(res => res.json() || {});
   }
 
+  deleteMeasurement(id: number): Observable<Measurement> {
+    return this.http.delete(baseURL + 'measurements/' + id).map(res => res.json() || {});
+  }
+
 }
