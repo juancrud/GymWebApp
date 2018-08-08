@@ -1,0 +1,21 @@
+<div class="container">
+  <h1>{{measurement.id ? "Edit Measurement" : "Add Measurement"}}</h1>
+  <p>Measurement: {{measurement | json}}</p>
+  <p>Errors: {{formErrors | json}}</p>
+
+  <form novalidate [formGroup]="measurementSaveForm" (ngSubmit)="formSubmit()">
+    <div class="form-row">
+      <div class="form-group col-3">
+        <label for="name">Name</label>
+        <input [(ngModel)]="measurement.name" class="form-control" formControlName="name" type="text" required />
+        <span [hidden]="!formErrors.name">{{formErrors.name}}</span>
+      </div>
+      <div class="form-group col-9">
+        <label for="description">Description</label>
+        <input [(ngModel)]="measurement.description" class="form-control" formControlName="description" placeholder="Description" type="text" />
+        <span [hidden]="!formErrors.description">{{formErrors.description}}</span>
+      </div>
+    </div>
+    <button type="submit" class="background-primary" [disabled]="measurementSaveForm.invalid">Save</button>
+  </form>
+</div>

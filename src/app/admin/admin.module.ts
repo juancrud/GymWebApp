@@ -7,14 +7,16 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { MeasurementsComponent } from './measurements/measurements.component';
 import { CustomersComponent } from './customers/customers.component';
 import { TrainersComponent } from './trainers/trainers.component';
-import { TrainerEditComponent } from './trainer-edit/trainer-edit.component';
-import { MeasurementEditComponent } from './measurement-edit/measurement-edit.component';
-import { CustomerEditComponent } from './customer-edit/customer-edit.component';
+import { CustomerSaveComponent } from './customer-save/customer-save.component';
+import { MeasurementSaveComponent } from './measurement-save/measurement-save.component';
+import { FormsModule, ReactiveFormsModule } from '../../../node_modules/@angular/forms';
 
 @NgModule({
   imports: [
     CommonModule,
-    AdminRoutingModule
+    AdminRoutingModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   declarations: [
     AdminComponent, 
@@ -22,9 +24,8 @@ import { CustomerEditComponent } from './customer-edit/customer-edit.component';
     MeasurementsComponent,
     CustomersComponent,
     TrainersComponent,
-    TrainerEditComponent,
-    MeasurementEditComponent,
-    CustomerEditComponent
+    CustomerSaveComponent,
+    MeasurementSaveComponent
   ],
   providers: [
   ]

@@ -21,4 +21,10 @@ export class MeasurementService {
       .map(res => res.json() || {});
   }
 
+  saveMeasurement(measurement: Measurement): Observable<Measurement> {
+    return measurement.id ?
+      this.http.put(baseURL + 'measurements/', measurement).map(res => res.json() || {}) :
+      this.http.post(baseURL + 'measurements/', measurement).map(res => res.json() || {});
+  }
+
 }

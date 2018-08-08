@@ -15,10 +15,10 @@
               <td>{{measurement.name}}</td>
               <td>{{measurement.description}}</td>
               <td>
-                  <a [routerLink]="['/admin/editMeasurement', measurement.id]">
+                  <a [routerLink]="['/admin/saveMeasurement', measurement.id]">
                     <i class="fa fa-pencil"></i>
                   </a>
-                  <a routerLink="/admin/editMeasurement">
+                  <a routerLink="/admin/saveMeasurement">
                     <i class="fa fa-trash"></i>
                   </a>
               </td>

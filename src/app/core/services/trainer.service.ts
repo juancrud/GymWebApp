@@ -19,12 +19,10 @@ export class TrainerService {
     return this.http.get(baseURL + 'trainers/' + id).map(res => res.json() || {});
   }
 
-  createTrainer(trainer: Trainer): Observable<Trainer> {
-    return this.http.put(baseURL + 'trainers/', trainer).map(res => res.json() || {});
-  }
-
-  updateTrainer(trainer: Trainer): Observable<Trainer> {
-    return this.http.post(baseURL + 'trainers/', trainer).map(res => res.json() || {});
+  saveTrainer(trainer: Trainer): Observable<Trainer> {
+    return trainer.id ?
+      this.http.put(baseURL + 'trainers/', trainer).map(res => res.json() || {}) :
+      this.http.post(baseURL + 'trainers/', trainer).map(res => res.json() || {});
   }
 
 }
