@@ -15,7 +15,7 @@ import { Observable } from '../../../../node_modules/rxjs/Observable';
 export class MeasurementSaveComponent implements OnInit {
   measurement: Measurement = new Measurement();
 
-  measurementSaveForm: FormGroup;
+  form: FormGroup;
   formErrors = {
     'name': '',
     'description': ''
@@ -59,21 +59,21 @@ export class MeasurementSaveComponent implements OnInit {
   }
 
   createForm() {
-    this.measurementSaveForm = this.formBuilder.group({
+    this.form = this.formBuilder.group({
       name: ['', [Validators.required, Validators.minLength(2), Validators.maxLength(255)]],
       description: ['', [Validators.maxLength(255)]]
     });
 
-    this.measurementSaveForm.valueChanges.subscribe(data => this.onValueChanged());
+    this.form.valueChanges.subscribe(data => this.onValueChanged());
     this.onValueChanged();
   };
 
   onValueChanged(data?: any) {
-    if (!this.measurementSaveForm) return;
+    if (!this.form) return;
 
     for (const field in this.formErrors) {
       this.formErrors[field] = '';
-      const control = this.measurementSaveForm.get(field);
+      const control = this.form.get(field);
       if (control && control.dirty && !control.valid) {
         const messages = this.validationMessages[field];
         for (const key in control.errors) {

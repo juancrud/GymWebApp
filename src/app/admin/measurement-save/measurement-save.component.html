@@ -5,7 +5,7 @@
   <p>Measurement: {{measurement | json}}</p>
   <p>Errors: {{formErrors | json}}</p> -->
 
-  <form novalidate [formGroup]="measurementSaveForm" (ngSubmit)="formSubmit()">
+  <form novalidate [formGroup]="form" (ngSubmit)="formSubmit()">
     <div class="form-row">
       <div class="form-group col-3">
         <label for="name">Name</label>
@@ -18,6 +18,6 @@
         <span [hidden]="!formErrors.description">{{formErrors.description}}</span>
       </div>
     </div>
-    <button type="submit" class="btn btn-primary" [disabled]="measurementSaveForm.invalid">Save</button>
+    <button type="submit" class="btn btn-primary" [disabled]="form.invalid">Save</button>
   </form>
 </div>
