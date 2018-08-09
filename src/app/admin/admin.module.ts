@@ -10,6 +10,7 @@ import { TrainersComponent } from './trainers/trainers.component';
 import { CustomerSaveComponent } from './customer-save/customer-save.component';
 import { MeasurementSaveComponent } from './measurement-save/measurement-save.component';
 import { FormsModule, ReactiveFormsModule } from '../../../node_modules/@angular/forms';
+import { TrainerSaveComponent } from './trainer-save/trainer-save.component';
 
 @NgModule({
   imports: [
@@ -25,7 +26,8 @@ import { FormsModule, ReactiveFormsModule } from '../../../node_modules/@angular
     CustomersComponent,
     TrainersComponent,
     CustomerSaveComponent,
-    MeasurementSaveComponent
+    MeasurementSaveComponent,
+    TrainerSaveComponent
   ],
   providers: [
   ]

@@ -17,4 +17,9 @@ export class CustomersComponent implements OnInit {
       .subscribe(customers => this.customers = customers);
   }
 
+  deleteCustomer(id: number) {
+    // this.customerService.deleteCustomer(id)
+    //   .subscribe(m => this.customers.splice(this.customers.indexOf(m), 1));
+  }
+
 }
