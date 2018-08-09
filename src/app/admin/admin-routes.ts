@@ -6,6 +6,7 @@ import { MeasurementsComponent } from './measurements/measurements.component';
 import { TrainersComponent } from './trainers/trainers.component';
 import { CustomersComponent } from './customers/customers.component';
 import { MeasurementSaveComponent } from './measurement-save/measurement-save.component';
+import { CustomerSaveComponent } from './customer-save/customer-save.component';
 
 export const adminRoutes: Routes = [
     { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
@@ -16,4 +17,6 @@ export const adminRoutes: Routes = [
     
     { path: 'saveMeasurement/:id', component: AdminComponent, children: [ { path: '', component: MeasurementSaveComponent } ]  },
     { path: 'saveMeasurement', component: AdminComponent, children: [ { path: '', component: MeasurementSaveComponent } ]  },
+    { path: 'saveCustomer/:id', component: AdminComponent, children: [ { path: '', component: CustomerSaveComponent } ]  },
+    { path: 'saveCustomer', component: AdminComponent, children: [ { path: '', component: CustomerSaveComponent } ]  },
 ];

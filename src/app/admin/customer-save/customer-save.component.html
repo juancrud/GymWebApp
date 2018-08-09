@@ -1,3 +1,62 @@
-<p>
-  customer-save works!
-</p>
+<div class="container">
+  <h1>{{customer.id ? "Edit Customer" : "Add Customer"}}</h1>
+
+  <!-- <p>Debugging info</p>
+  <p>Customer: {{customer | json}}</p>
+  <p>Errors: {{formErrors | json}}</p> -->
+
+  <form novalidate [formGroup]="form" (ngSubmit)="formSubmit()">
+    <div class="form-row">
+      <div class="form-group col-3">
+        <label for="name">Name</label>
+        <input [(ngModel)]="customer.name" class="form-control" formControlName="name" type="text" required />
+        <span [hidden]="!formErrors.name">{{formErrors.name}}</span>
+      </div>
+      <div class="form-group col-3">
+        <label for="documentId">Document Id</label>
+        <input [(ngModel)]="customer.documentId" class="form-control" formControlName="documentId" placeholder="Document Id" type="text" />
+        <span [hidden]="!formErrors.documentId">{{formErrors.documentId}}</span>
+      </div>
+      <div class="form-group col-3">
+        <label for="gender">Gender</label>
+        <input [(ngModel)]="customer.gender" class="form-control" formControlName="gender" placeholder="Gender" type="text" />
+        <span [hidden]="!formErrors.gender">{{formErrors.gender}}</span>
+      </div>
+      <div class="form-group col-3">
+        <label for="birthDay">Birth Day</label>
+        <input [(ngModel)]="customer.birthDay" class="form-control" formControlName="birthDay" type="text" required />
+        <span [hidden]="!formErrors.birthDay">{{formErrors.birthDay}}</span>
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="form-group col-4">
+        <label for="address">Address</label>
+        <input [(ngModel)]="customer.address" class="form-control" formControlName="address" type="text" required />
+        <span [hidden]="!formErrors.address">{{formErrors.address}}</span>
+      </div>
+      <div class="form-group col-4">
+        <label for="emailAddress">Email Address</label>
+        <input [(ngModel)]="customer.emailAddress" class="form-control" formControlName="emailAddress" type="text" required />
+        <span [hidden]="!formErrors.emailAddress">{{formErrors.emailAddress}}</span>
+      </div>
+      <div class="form-group col-4">
+        <label for="phoneNumber">Phone Number</label>
+        <input [(ngModel)]="customer.phoneNumber" class="form-control" formControlName="phoneNumber" type="text" required />
+        <span [hidden]="!formErrors.phoneNumber">{{formErrors.phoneNumber}}</span>
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="form-group col-2">
+        <label for="height">Height</label>
+        <input [(ngModel)]="customer.height" class="form-control" formControlName="height" type="text" required />
+        <span [hidden]="!formErrors.height">{{formErrors.height}}</span>
+      </div>
+      <div class="form-group col-2">
+        <label for="status">Status</label>
+        <input [(ngModel)]="customer.status" class="form-control" formControlName="status" type="text" required />
+        <span [hidden]="!formErrors.status">{{formErrors.status}}</span>
+      </div>
+    </div>
+    <button type="submit" class="btn btn-primary" [disabled]="form.invalid">Save</button>
+  </form>
+</div>

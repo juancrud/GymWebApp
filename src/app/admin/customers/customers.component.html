@@ -29,10 +29,10 @@
               <td>{{customer.status}}</td>
               <td>{{customer.height}}</td>
               <td>
-                  <a [routerLink]="['/admin/editCustomer', customer.id]">
+                  <a [routerLink]="['/admin/saveCustomer', customer.id]">
                     <i class="fa fa-pencil"></i>
                   </a>
-                  <a routerLink="/admin/editCustomer">
+                  <a routerLink="/admin/saveCustomer">
                     <i class="fa fa-trash"></i>
                   </a>
               </td>

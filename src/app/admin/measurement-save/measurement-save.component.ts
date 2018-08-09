@@ -88,8 +88,4 @@ export class MeasurementSaveComponent implements OnInit {
       .subscribe(m => this.router.navigateByUrl("/admin/measurements"), e => console.log('error', e));
   };
 
-  getTitle() {
-    this.measurement.id ? "Edit Measurement" : "Add Measurement";
-  }
-
 }

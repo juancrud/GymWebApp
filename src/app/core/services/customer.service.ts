@@ -17,4 +17,10 @@ export class CustomerService {
     return this.http.get(baseURL + 'customers/' + id).map(res => res.json() || {});
   }
 
+  saveCustomer(customer: Customer): Observable<Customer> {
+    return customer.id ?
+      this.http.put(baseURL + 'customers/', customer).map(res => res.json() || {}) :
+      this.http.post(baseURL + 'customers/', customer).map(res => res.json() || {});
+  }
+
 }
