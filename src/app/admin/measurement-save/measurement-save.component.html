@@ -9,7 +9,7 @@
     <div class="form-row">
       <div class="form-group col-3">
         <label for="name">Name</label>
-        <input [(ngModel)]="measurement.name" class="form-control" formControlName="name" type="text" required />
+        <input [(ngModel)]="measurement.name" class="form-control" formControlName="name" type="text" />
         <span [hidden]="!formErrors.name">{{formErrors.name}}</span>
       </div>
       <div class="form-group col-9">

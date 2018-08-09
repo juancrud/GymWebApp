@@ -26,25 +26,26 @@ export class TrainerSaveComponent implements OnInit {
   };
   validationMessages = {
     'documentId': {
-      'required': 'DocumentId is required.',
-      'minlength': 'DocumentId must be 9 characters long.',
-      'maxlength': 'DocumentId must be 9 characters long.'
+      'required': 'Document Id is required.'
     },
     'name': {
       'required': 'Name is required.'
     },
     'gender': {
+      'required': 'Gender is required.'
     },
     'birthDay': {
-      'required': 'BirthDay is required.'
+      'required': 'Birth Day is required.'
     },
     'address': {
     },
     'emailAddress': {
+      'email': 'Email Address format is incorrect.'
     },
     'phoneNumber': {
     },
     'status': {
+      'required': 'Status is required.'
     }
   };
 
@@ -77,14 +78,14 @@ export class TrainerSaveComponent implements OnInit {
 
   createForm() {
     this.form = this.formBuilder.group({
-      documentId: ['', [Validators.required, Validators.minLength(9), Validators.maxLength(9)]],
-      name: ['', []],
-      gender: ['', []],
-      birthDay: ['', []],
+      documentId: ['', [Validators.required]],
+      name: ['', [Validators.required]],
+      gender: ['', [Validators.required]],
+      birthDay: ['', [Validators.required]],
       address: ['', []],
-      emailAddress: ['', []],
+      emailAddress: ['', [Validators.email]],
       phoneNumber: ['', []],
-      status: ['', []]
+      status: ['', [Validators.required]]
     });
 
     this.form.valueChanges.subscribe(data => this.onValueChanged());
@@ -100,6 +101,7 @@ export class TrainerSaveComponent implements OnInit {
       if (control && control.dirty && !control.valid) {
         const messages = this.validationMessages[field];
         for (const key in control.errors) {
+          console.log('Error: ' + field + ' - ' + key);
           this.formErrors[field] += messages[key] + ' ';
         }
       }

@@ -9,7 +9,7 @@
     <div class="form-row">
       <div class="form-group col-3">
         <label for="name">Name</label>
-        <input [(ngModel)]="customer.name" class="form-control" formControlName="name" type="text" required />
+        <input [(ngModel)]="customer.name" class="form-control" formControlName="name" type="text" />
         <span [hidden]="!formErrors.name">{{formErrors.name}}</span>
       </div>
       <div class="form-group col-3">
@@ -24,36 +24,36 @@
       </div>
       <div class="form-group col-3">
         <label for="birthDay">Birth Day</label>
-        <input [(ngModel)]="customer.birthDay" class="form-control" formControlName="birthDay" type="text" required />
+        <input [(ngModel)]="customer.birthDay" class="form-control" formControlName="birthDay" type="text" />
         <span [hidden]="!formErrors.birthDay">{{formErrors.birthDay}}</span>
       </div>
     </div>
     <div class="form-row">
       <div class="form-group col-4">
         <label for="address">Address</label>
-        <input [(ngModel)]="customer.address" class="form-control" formControlName="address" type="text" required />
+        <input [(ngModel)]="customer.address" class="form-control" formControlName="address" type="text" />
         <span [hidden]="!formErrors.address">{{formErrors.address}}</span>
       </div>
       <div class="form-group col-4">
         <label for="emailAddress">Email Address</label>
-        <input [(ngModel)]="customer.emailAddress" class="form-control" formControlName="emailAddress" type="text" required />
+        <input [(ngModel)]="customer.emailAddress" class="form-control" formControlName="emailAddress" type="text" />
         <span [hidden]="!formErrors.emailAddress">{{formErrors.emailAddress}}</span>
       </div>
       <div class="form-group col-4">
         <label for="phoneNumber">Phone Number</label>
-        <input [(ngModel)]="customer.phoneNumber" class="form-control" formControlName="phoneNumber" type="text" required />
+        <input [(ngModel)]="customer.phoneNumber" class="form-control" formControlName="phoneNumber" type="text" />
         <span [hidden]="!formErrors.phoneNumber">{{formErrors.phoneNumber}}</span>
       </div>
     </div>
     <div class="form-row">
       <div class="form-group col-2">
         <label for="height">Height</label>
-        <input [(ngModel)]="customer.height" class="form-control" formControlName="height" type="text" required />
+        <input [(ngModel)]="customer.height" class="form-control" formControlName="height" type="text" />
         <span [hidden]="!formErrors.height">{{formErrors.height}}</span>
       </div>
       <div class="form-group col-2">
         <label for="status">Status</label>
-        <input [(ngModel)]="customer.status" class="form-control" formControlName="status" type="text" required />
+        <input [(ngModel)]="customer.status" class="form-control" formControlName="status" type="text" />
         <span [hidden]="!formErrors.status">{{formErrors.status}}</span>
       </div>
     </div>
