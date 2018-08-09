@@ -8,5 +8,11 @@ export class Customer {
 	emailAddress: string;
 	phoneNumber: number;
 	height: number;
-	status: string;
+	status: CustomerStatus;
+}
+
+export enum CustomerStatus {
+	Active = "Active",
+	Inactive = "Inactive",
+	Deleted = "Deleted"
 }

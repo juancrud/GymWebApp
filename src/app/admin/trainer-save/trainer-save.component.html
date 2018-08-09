@@ -14,12 +14,14 @@
       </div>
       <div class="form-group col-3">
         <label for="documentId">Document Id</label>
-        <input [(ngModel)]="trainer.documentId" class="form-control" formControlName="documentId" placeholder="Document Id" type="text" />
+        <input [(ngModel)]="trainer.documentId" class="form-control" formControlName="documentId" type="text" />
         <span [hidden]="!formErrors.documentId">{{formErrors.documentId}}</span>
       </div>
       <div class="form-group col-3">
         <label for="gender">Gender</label>
-        <input [(ngModel)]="trainer.gender" class="form-control" formControlName="gender" placeholder="Gender" type="text" />
+        <select [(ngModel)]="trainer.gender" class="form-control" formControlName="gender" >
+          <option *ngFor="let g of genders" [ngValue]="g">{{g}}</option>
+        </select>
         <span [hidden]="!formErrors.gender">{{formErrors.gender}}</span>
       </div>
       <div class="form-group col-3">
@@ -48,7 +50,9 @@
     <div class="form-row">
       <div class="form-group col-2">
         <label for="status">Status</label>
-        <input [(ngModel)]="trainer.status" class="form-control" formControlName="status" type="text" />
+        <select [(ngModel)]="trainer.status" class="form-control" formControlName="status" >
+          <option *ngFor="let s of statuses" [ngValue]="s">{{s}}</option>
+        </select>
         <span [hidden]="!formErrors.status">{{formErrors.status}}</span>
       </div>
     </div>

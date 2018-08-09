@@ -1,9 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { Customer } from '../../core/models/Customer';
+import { Customer, CustomerStatus } from '../../core/models/Customer';
 import { FormGroup, FormBuilder, Validators } from '../../../../node_modules/@angular/forms';
 import { CustomerService } from '../../core/services/customer.service';
 import { ActivatedRoute, Router, Params } from '../../../../node_modules/@angular/router';
 import { Observable } from '../../../../node_modules/rxjs/Observable';
+import { Gender } from '../../core/models/Gender';
 
 @Component({
   selector: 'app-customer-save',
@@ -12,6 +13,8 @@ import { Observable } from '../../../../node_modules/rxjs/Observable';
 })
 export class CustomerSaveComponent implements OnInit {
   customer: Customer = new Customer();
+  genders: Gender[] = [Gender.Male, Gender.Female];
+  statuses: CustomerStatus[] = [CustomerStatus.Active, CustomerStatus.Inactive, CustomerStatus.Deleted];
 
   form: FormGroup;
   formErrors = {

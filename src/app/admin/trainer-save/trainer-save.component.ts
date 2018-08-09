@@ -1,9 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { Trainer } from '../../core/models/Trainer';
+import { Trainer, TrainerStatus } from '../../core/models/Trainer';
 import { FormGroup, FormBuilder, Validators } from '../../../../node_modules/@angular/forms';
 import { TrainerService } from '../../core/services/trainer.service';
 import { ActivatedRoute, Router, Params } from '../../../../node_modules/@angular/router';
 import { Observable } from '../../../../node_modules/rxjs/Observable';
+import { Gender } from '../../core/models/Gender';
 
 @Component({
   selector: 'app-trainer-save',
@@ -12,6 +13,8 @@ import { Observable } from '../../../../node_modules/rxjs/Observable';
 })
 export class TrainerSaveComponent implements OnInit {
   trainer: Trainer = new Trainer();
+  genders: Gender[] = [Gender.Male, Gender.Female];
+  statuses: TrainerStatus[] = [TrainerStatus.Active, TrainerStatus.Inactive, TrainerStatus.Deleted];
 
   form: FormGroup;
   formErrors = {
@@ -61,7 +64,7 @@ export class TrainerSaveComponent implements OnInit {
   ngOnInit() {
     this.route.params
       .switchMap((params: Params) => {
-        var trainerId = +params['id'];
+        let trainerId = +params['id'];
         if (trainerId){
           return this.trainerService.getTrainer(trainerId);
         }

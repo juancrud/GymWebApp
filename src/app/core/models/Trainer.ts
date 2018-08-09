@@ -7,5 +7,11 @@ export class Trainer {
 	address: string;
 	emailAddress: string;
 	phoneNumber: number;
-	status: string;
+	status: TrainerStatus;
+}
+
+export enum TrainerStatus {
+	Active = "Active",
+	Inactive = "Inactive",
+	Deleted = "Deleted"
 }
