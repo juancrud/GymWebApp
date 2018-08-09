@@ -104,7 +104,6 @@ export class TrainerSaveComponent implements OnInit {
       if (control && control.dirty && !control.valid) {
         const messages = this.validationMessages[field];
         for (const key in control.errors) {
-          console.log('Error: ' + field + ' - ' + key);
           this.formErrors[field] += messages[key] + ' ';
         }
       }

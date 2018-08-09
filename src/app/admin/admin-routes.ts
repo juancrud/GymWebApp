@@ -15,6 +15,7 @@ export const adminRoutes: Routes = [
     { path: 'trainers', component: AdminComponent, children: [ { path: '', component: TrainersComponent } ]  },
     { path: 'customers', component: AdminComponent, children: [ { path: '', component: CustomersComponent } ]  },
     { path: 'measurements', component: AdminComponent, children: [ { path: '', component: MeasurementsComponent } ]  },
+    { path: 'exercises', component: AdminComponent, children: [ { path: '', component: DashboardComponent } ]  },
     
     { path: 'saveMeasurement/:id', component: AdminComponent, children: [ { path: '', component: MeasurementSaveComponent } ]  },
     { path: 'saveMeasurement', component: AdminComponent, children: [ { path: '', component: MeasurementSaveComponent } ]  },

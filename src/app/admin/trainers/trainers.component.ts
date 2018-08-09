@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Trainer } from '../../core/models/Trainer';
+import { Trainer, TrainerStatus } from '../../core/models/Trainer';
 import { TrainerService } from '../../core/services/trainer.service';
 
 @Component({
@@ -16,6 +16,13 @@ export class TrainersComponent implements OnInit {
     this.trainerService.getTrainers()
       .subscribe(trainers => this.trainers = trainers);
 
+  }
+
+  deleteTrainer(id: number) {
+    let trainer = this.trainers.find(c => c.id === id);
+    trainer.status = TrainerStatus.Deleted;
+    this.trainerService.saveTrainer(trainer)
+      .subscribe(m => console.log('deleted'));
   }
 
 }

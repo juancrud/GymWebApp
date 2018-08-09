@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Customer } from '../../core/models/Customer';
+import { Customer, CustomerStatus } from '../../core/models/Customer';
 import { CustomerService } from '../../core/services/customer.service';
 
 @Component({
@@ -18,8 +18,10 @@ export class CustomersComponent implements OnInit {
   }
 
   deleteCustomer(id: number) {
-    // this.customerService.deleteCustomer(id)
-    //   .subscribe(m => this.customers.splice(this.customers.indexOf(m), 1));
+    let customer = this.customers.find(c => c.id === id);
+    customer.status = CustomerStatus.Deleted;
+    this.customerService.saveCustomer(customer)
+      .subscribe(m => console.log('deleted'));
   }
 
 }

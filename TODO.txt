@@ -1,12 +1,11 @@
-- crud operations on trainers
-- crud operations on customers
-- crud operations on measurements
+* AdminModule:
+- (soft) delete operations on customer/trainers/measurements
 - improve services implementations
-- add admin/exerciseCategory and admin/exercises modules
 - handle httpErrors
 - handle httprequest latency
 - admin dashboard
-- favicon not working on heroku
+- Exercises (+categories)
 
--Trainers module
--Customers module
+* Login:
+* Trainers module:
+* Customers module:
