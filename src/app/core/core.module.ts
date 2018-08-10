@@ -13,6 +13,7 @@ import { TrainerService } from './services/trainer.service';
 import { MeasurementService } from './services/measurement.service';
 import { CustomerService } from './services/customer.service';
 import { ExerciseCategoryService } from './services/exercise-category.service';
+import { ExerciseService } from './services/exercise.service';
 
 @NgModule({
   imports: [
@@ -36,7 +37,8 @@ import { ExerciseCategoryService } from './services/exercise-category.service';
     TrainerService,
     MeasurementService,
     CustomerService,
-    ExerciseCategoryService
+    ExerciseCategoryService,
+    ExerciseService
   ]
 })
 export class CoreModule { }
