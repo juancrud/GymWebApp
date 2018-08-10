@@ -1,10 +1,14 @@
+- general sidebar component
+- picture list component
+
 * AdminModule:
-- (soft) delete operations on customer/trainers/measurements
-- improve services implementations
+- Exercises (+categories)
+- (soft) delete operations on measurements
 - handle httpErrors
 - handle httprequest latency
+- improve services implementations
+- improve form implementation
 - admin dashboard
-- Exercises (+categories)
 
 * Login:
 * Trainers module:

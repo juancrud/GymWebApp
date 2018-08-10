@@ -1,0 +1,30 @@
+<div class="container">
+  <h1>Exercise Categories</h1>
+  <button routerLink="/admin/saveExerciseCategory" type="button" class="btn btn-primary">Add</button>
+  <div class="table-responsive">
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Total Exercises</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let ex of exerciseCategories">
+          <td>{{ex.name}}</td>
+          <td>{{ex.totalExercises}}</td>
+          <td>
+            <a [routerLink]="['/admin/saveExerciseCategory', ex.id]">
+              <i class="fa fa-pencil"></i>
+            </a>
+            <a (click)="deleteExerciseCategory(ex.id)">
+              <i class="fa fa-trash"></i>
+            </a>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+  

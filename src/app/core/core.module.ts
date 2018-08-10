@@ -12,6 +12,7 @@ import { HttpModule } from '../../../node_modules/@angular/http';
 import { TrainerService } from './services/trainer.service';
 import { MeasurementService } from './services/measurement.service';
 import { CustomerService } from './services/customer.service';
+import { ExerciseCategoryService } from './services/exercise-category.service';
 
 @NgModule({
   imports: [
@@ -34,7 +35,8 @@ import { CustomerService } from './services/customer.service';
   providers: [
     TrainerService,
     MeasurementService,
-    CustomerService
+    CustomerService,
+    ExerciseCategoryService
   ]
 })
 export class CoreModule { }
