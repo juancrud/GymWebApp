@@ -4,6 +4,7 @@ import { FormGroup, FormBuilder, Validators } from '../../../../node_modules/@an
 import { ExerciseCategoryService } from '../../core/services/exercise-category.service';
 import { ActivatedRoute, Router, Params } from '../../../../node_modules/@angular/router';
 import { Observable } from '../../../../node_modules/rxjs/Observable';
+import { Exercise } from '../../core/models/Exercise';
 
 @Component({
   selector: 'app-exercise-category-save',
@@ -12,6 +13,7 @@ import { Observable } from '../../../../node_modules/rxjs/Observable';
 })
 export class ExerciseCategorySaveComponent implements OnInit {
   exerciseCategory: ExerciseCategory = new ExerciseCategory();
+  exercises: Exercise[] = [];
   
   form: FormGroup;
   formErrors = {
