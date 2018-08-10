@@ -13,6 +13,7 @@ import { FormsModule, ReactiveFormsModule } from '../../../node_modules/@angular
 import { TrainerSaveComponent } from './trainer-save/trainer-save.component';
 import { ExerciseCategoriesComponent } from './exercise-categories/exercise-categories.component';
 import { ExerciseCategorySaveComponent } from './exercise-category-save/exercise-category-save.component';
+import { ExerciseSaveComponent } from './exercise-save/exercise-save.component';
 
 @NgModule({
   imports: [
@@ -31,7 +32,8 @@ import { ExerciseCategorySaveComponent } from './exercise-category-save/exercise
     MeasurementSaveComponent,
     TrainerSaveComponent,
     ExerciseCategoriesComponent,
-    ExerciseCategorySaveComponent
+    ExerciseCategorySaveComponent,
+    ExerciseSaveComponent
   ],
   providers: [
   ]

@@ -10,6 +10,7 @@ import { CustomerSaveComponent } from './customer-save/customer-save.component';
 import { TrainerSaveComponent } from './trainer-save/trainer-save.component';
 import { ExerciseCategoriesComponent } from './exercise-categories/exercise-categories.component';
 import { ExerciseCategorySaveComponent } from './exercise-category-save/exercise-category-save.component';
+import { ExerciseSaveComponent } from './exercise-save/exercise-save.component';
 
 export const adminRoutes: Routes = [
     { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
@@ -26,6 +27,8 @@ export const adminRoutes: Routes = [
     { path: 'saveTrainer/:id', component: AdminComponent, children: [ { path: '', component: TrainerSaveComponent } ]  },
     { path: 'saveTrainer', component: AdminComponent, children: [ { path: '', component: TrainerSaveComponent } ]  },
     { path: 'saveExerciseCategory', component: AdminComponent, children: [ { path: '', component: ExerciseCategorySaveComponent } ]  },
-    { path: 'saveExerciseCategory/:id', component: AdminComponent, children: [ { path: '', component: ExerciseCategorySaveComponent } ]  }
+    { path: 'saveExerciseCategory/:id', component: AdminComponent, children: [ { path: '', component: ExerciseCategorySaveComponent } ]  },
+    { path: 'saveExercise', component: AdminComponent, children: [ { path: '', component: ExerciseSaveComponent } ]  },
+    { path: 'saveExercise/:id', component: AdminComponent, children: [ { path: '', component: ExerciseSaveComponent } ]  }
     
 ];

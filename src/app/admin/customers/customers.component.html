@@ -2,42 +2,42 @@
   <h1>Customers</h1>
   <button routerLink="/admin/saveCustomer" type="button" class="btn btn-primary">Add</button>
   <div class="table-responsive">
-      <table class="table">
-          <thead>
-            <tr>
-              <th>Name</th>
-              <th>Document Id</th>
-              <th>Gender</th>
-              <th>Birthday</th>
-              <th>Address</th>
-              <th>Email</th>
-              <th>Phone</th>
-              <th>Status</th>
-              <th>Height</th>
-              <th>Actions</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr *ngFor="let customer of customers">
-              <td>{{customer.name}}</td>
-              <td>{{customer.documentId}}</td>
-              <td>{{customer.gender}}</td>
-              <td>{{customer.birthDay}}</td>
-              <td>{{customer.address}}</td>
-              <td>{{customer.emailAddress}}</td>
-              <td>{{customer.phoneNumber}}</td>
-              <td>{{customer.status}}</td>
-              <td>{{customer.height}}</td>
-              <td>
-                  <a [routerLink]="['/admin/saveCustomer', customer.id]">
-                    <i class="fa fa-pencil"></i>
-                  </a>
-                  <a (click)="deleteCustomer(customer.id)">
-                    <i class="fa fa-trash"></i>
-                  </a>
-              </td>
-            </tr>
-          </tbody>
-        </table>
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Document Id</th>
+          <th>Gender</th>
+          <th>Birthday</th>
+          <th>Address</th>
+          <th>Email</th>
+          <th>Phone</th>
+          <th>Status</th>
+          <th>Height</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let customer of customers">
+          <td>{{customer.name}}</td>
+          <td>{{customer.documentId}}</td>
+          <td>{{customer.gender}}</td>
+          <td>{{customer.birthDay}}</td>
+          <td>{{customer.address}}</td>
+          <td>{{customer.emailAddress}}</td>
+          <td>{{customer.phoneNumber}}</td>
+          <td>{{customer.status}}</td>
+          <td>{{customer.height}}</td>
+          <td>
+              <a [routerLink]="['/admin/saveCustomer', customer.id]">
+                <i class="fa fa-pencil"></i>
+              </a>
+              <a (click)="deleteCustomer(customer.id)">
+                <i class="fa fa-trash"></i>
+              </a>
+          </td>
+        </tr>
+      </tbody>
+    </table>
   </div>
 </div>

@@ -13,6 +13,39 @@
         <span [hidden]="!formErrors.name">{{formErrors.name}}</span>
       </div>
     </div>
+
+    <div class="form-row">
+      <div class="form-group col-12">
+        <h4>Exercises</h4>
+        <button routerLink="/admin/saveExercise" type="button" class="btn btn-primary">Add</button>
+        <div class="table-responsive">
+          <table class="table">
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Description</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let exercise of exercises">
+                <td>{{exercise.name}}</td>
+                <td>{{exercise.description}}</td>
+                <td>
+                    <a [routerLink]="['/admin/saveExercise', exercise.id]">
+                      <i class="fa fa-pencil"></i>
+                    </a>
+                    <a (click)="deleteExercise(exercise.id)">
+                      <i class="fa fa-trash"></i>
+                    </a>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
     <button type="submit" class="btn btn-primary" [disabled]="form.invalid">Save</button>
   </form>
 </div>
