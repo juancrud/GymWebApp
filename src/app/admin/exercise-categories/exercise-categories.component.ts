@@ -17,4 +17,12 @@ export class ExerciseCategoriesComponent implements OnInit {
       .subscribe(items => this.exerciseCategories = items);
   }
 
+  deleteExerciseCategory(id: number) {
+    console.log('deleteExerciseCategory Not implemented');
+    // let exerciseCategory = this.exerciseCategories.find(c => c.id === id);
+    // customer.status = CustomerStatus.Deleted;
+    // this.customerService.saveCustomer(customer)
+    //   .subscribe(m => console.log('deleted'));
+  }
+
 }

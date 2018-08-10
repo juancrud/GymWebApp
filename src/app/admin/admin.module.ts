@@ -12,6 +12,7 @@ import { MeasurementSaveComponent } from './measurement-save/measurement-save.co
 import { FormsModule, ReactiveFormsModule } from '../../../node_modules/@angular/forms';
 import { TrainerSaveComponent } from './trainer-save/trainer-save.component';
 import { ExerciseCategoriesComponent } from './exercise-categories/exercise-categories.component';
+import { ExerciseCategorySaveComponent } from './exercise-category-save/exercise-category-save.component';
 
 @NgModule({
   imports: [
@@ -29,7 +30,8 @@ import { ExerciseCategoriesComponent } from './exercise-categories/exercise-cate
     CustomerSaveComponent,
     MeasurementSaveComponent,
     TrainerSaveComponent,
-    ExerciseCategoriesComponent
+    ExerciseCategoriesComponent,
+    ExerciseCategorySaveComponent
   ],
   providers: [
   ]

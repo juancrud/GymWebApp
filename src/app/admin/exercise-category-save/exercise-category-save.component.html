@@ -1,0 +1,19 @@
+<div class="container">
+  <h1>{{exerciseCategory.id ? "Edit Exercise Category" : "Add Exercise Category"}}</h1>
+
+  <!-- <p>Debugging info</p>
+  <p>ExerciseCategory: {{exerciseCategory | json}}</p>
+  <p>Errors: {{formErrors | json}}</p> -->
+
+  <form novalidate [formGroup]="form" (ngSubmit)="formSubmit()">
+    <div class="form-row">
+      <div class="form-group col-3">
+        <label for="name">Name</label>
+        <input [(ngModel)]="exerciseCategory.name" class="form-control" formControlName="name" type="text" />
+        <span [hidden]="!formErrors.name">{{formErrors.name}}</span>
+      </div>
+    </div>
+    <button type="submit" class="btn btn-primary" [disabled]="form.invalid">Save</button>
+  </form>
+</div>
+  
