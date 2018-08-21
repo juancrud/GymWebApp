@@ -7,6 +7,7 @@
           <tr>
             <th>Name</th>
             <th>Description</th>
+            <th>Status</th>
             <th>Actions</th>
           </tr>
         </thead>
@@ -14,6 +15,7 @@
           <tr *ngFor="let measurement of measurements">
             <td>{{measurement.name}}</td>
             <td>{{measurement.description}}</td>
+            <td>{{measurement.status}}</td>
             <td>
                 <a [routerLink]="['/admin/saveMeasurement', measurement.id]">
                   <i class="fa fa-pencil"></i>
