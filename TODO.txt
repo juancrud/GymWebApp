@@ -3,7 +3,6 @@
 
 * AdminModule:
 - Exercises (+categories)
-- date fields
 - (soft) delete operations on measurements and exercises
 - handle httpErrors
 - handle httprequest latency
@@ -14,3 +13,6 @@
 * Login:
 * Trainers module:
 * Customers module:
+
+*Sidebar:
+-height fix

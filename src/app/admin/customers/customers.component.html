@@ -1,43 +1,27 @@
 <div class="container">
   <h1>Customers</h1>
-  <button routerLink="/admin/saveCustomer" type="button" class="btn btn-primary">Add</button>
-  <div class="table-responsive">
-    <table class="table">
-      <thead>
-        <tr>
-          <th>Name</th>
-          <th>Document Id</th>
-          <th>Gender</th>
-          <th>Birthday</th>
-          <th>Address</th>
-          <th>Email</th>
-          <th>Phone</th>
-          <th>Status</th>
-          <th>Height</th>
-          <th>Actions</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr *ngFor="let customer of customers">
-          <td>{{customer.name}}</td>
-          <td>{{customer.documentId}}</td>
-          <td>{{customer.gender}}</td>
-          <td>{{customer.birthDay}}</td>
-          <td>{{customer.address}}</td>
-          <td>{{customer.emailAddress}}</td>
-          <td>{{customer.phoneNumber}}</td>
-          <td>{{customer.status}}</td>
-          <td>{{customer.height}}</td>
-          <td>
+  <div style="padding-bottom: 1.5rem;">
+    <button routerLink="/admin/saveCustomer" type="button" class="btn btn-primary">Add</button>
+  </div>
+  <div class="row">
+      <div class="col-sm-4" *ngFor="let customer of customers">   
+        <div class="card text-center my-3">
+          <img class="rounded-circle mx-auto" style="width: 8rem;" src="assets/images/1.jpg" alt="Card image cap">
+          <div class="card-body">
+            <h5 class="card-title">{{customer.name}}</h5>
+            <p class="card-text">Email: {{customer.emailAddress}}</p>
+            <p class="card-text">Phone: {{customer.phoneNumber}}</p>
+            <p class="card-text">Status: {{customer.status}}</p>
+            <div>
               <a [routerLink]="['/admin/saveCustomer', customer.id]">
                 <i class="fa fa-pencil"></i>
               </a>
               <a (click)="deleteCustomer(customer.id)">
                 <i class="fa fa-trash"></i>
               </a>
-          </td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div> 
 </div>
