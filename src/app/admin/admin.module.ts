@@ -14,6 +14,7 @@ import { TrainerSaveComponent } from './trainer-save/trainer-save.component';
 import { ExerciseCategoriesComponent } from './exercise-categories/exercise-categories.component';
 import { ExerciseCategorySaveComponent } from './exercise-category-save/exercise-category-save.component';
 import { ExerciseSaveComponent } from './exercise-save/exercise-save.component';
+import { GridComponent } from './grid/grid.component';
 
 @NgModule({
   imports: [
@@ -33,7 +34,8 @@ import { ExerciseSaveComponent } from './exercise-save/exercise-save.component';
     TrainerSaveComponent,
     ExerciseCategoriesComponent,
     ExerciseCategorySaveComponent,
-    ExerciseSaveComponent
+    ExerciseSaveComponent,
+    GridComponent
   ],
   providers: [
   ]

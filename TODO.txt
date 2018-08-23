@@ -1,5 +1,5 @@
+- picture list component * ( work on delete function, view, data mapping )
 - general sidebar component
-- picture list component
 
 * AdminModule:
 - Exercises (+categories)
@@ -7,7 +7,7 @@
 - Add pictures
 - (soft) delete operations on measurements and exercises
 - handle httpErrors
-- handle httprequest latency
+- handle httprequest latency(loading)
 - improve services implementations
 - improve form implementation
 - admin dashboard

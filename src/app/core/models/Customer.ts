@@ -9,6 +9,7 @@ export class Customer {
 	phoneNumber: number;
 	height: number;
 	status: CustomerStatus;
+	imageUrl: string;
 }
 
 export enum CustomerStatus {
