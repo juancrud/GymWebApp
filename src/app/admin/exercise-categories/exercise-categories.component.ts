@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ExerciseCategory } from '../../core/models/ExerciseCategory';
+import { ExerciseCategory, ExerciseCategoryStatus } from '../../core/models/ExerciseCategory';
 import { ExerciseCategoryService } from '../../core/services/exercise-category.service';
 
 @Component({
@@ -18,11 +18,10 @@ export class ExerciseCategoriesComponent implements OnInit {
   }
 
   deleteExerciseCategory(id: number) {
-    console.log('deleteExerciseCategory Not implemented');
-    // let exerciseCategory = this.exerciseCategories.find(c => c.id === id);
-    // customer.status = CustomerStatus.Deleted;
-    // this.customerService.saveCustomer(customer)
-    //   .subscribe(m => console.log('deleted'));
+    let exerciseCategory = this.exerciseCategories.find(c => c.id === id);
+    exerciseCategory.status = ExerciseCategoryStatus.Deleted;
+    this.exerciseCategoryService.saveExerciseCategory(exerciseCategory)
+      .subscribe(m => console.log('deleted'));
   }
 
 }

@@ -15,7 +15,9 @@
       <tbody>
         <tr *ngFor="let ex of exerciseCategories">
           <td>{{ex.name}}</td>
-          <td>{{ex.totalExercises}}</td>
+          <td>{{ex.description}}</td>
+          <td>{{ex.status}}</td>
+          <td>{{ex.exercises.length}}</td>
           <td>
             <a [routerLink]="['/admin/saveExerciseCategory', ex.id]">
               <i class="fa fa-pencil"></i>
