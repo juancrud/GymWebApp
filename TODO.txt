@@ -16,7 +16,6 @@
 * Trainers module:
 * Customers module:
 
-- Git branching
 
 *Sidebar:
 -height fix
