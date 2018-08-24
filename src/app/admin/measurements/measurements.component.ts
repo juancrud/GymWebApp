@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Measurement } from '../../core/models/Measurement';
+import { Measurement, MeasurementStatus } from '../../core/models/Measurement';
 import { MeasurementService } from '../../core/services/measurement.service';
 
 @Component({
@@ -17,8 +17,10 @@ export class MeasurementsComponent implements OnInit {
   }
 
   deleteMeasurement(id: number) {
-    this.measurementService.deleteMeasurement(id)
-      .subscribe(m => this.measurements.splice(this.measurements.indexOf(m), 1));
+    let measurement = this.measurements.find(c => c.id === id);
+    measurement.status = MeasurementStatus.Deleted;
+    this.measurementService.saveMeasurement(measurement)
+      .subscribe(m => console.log('deleted'));
   }
 
 }

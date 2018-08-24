@@ -2,10 +2,10 @@
 - general sidebar component
 
 * AdminModule:
+- (soft) delete operations on measurements and exercises
 - Exercises (+categories)
 - date fields
 - Add pictures
-- (soft) delete operations on measurements and exercises
 - handle httpErrors
 - handle httprequest latency(loading)
 - improve services implementations
@@ -15,6 +15,8 @@
 * Login:
 * Trainers module:
 * Customers module:
+
+- Git branching
 
 *Sidebar:
 -height fix
