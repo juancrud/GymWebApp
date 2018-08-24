@@ -1,35 +1,10 @@
 <div class="container">
   <h1>Customers</h1>
-  <div style="padding-bottom: 1.5rem;">
-    <button routerLink="/admin/saveCustomer" type="button" class="btn btn-primary">
-      <i class="fa fa-plus-square"></i>
-    </button>
-  </div>
-  <div class="row">
-      <div class="col-sm-4" *ngFor="let customer of customers">   
-        <div class="card text-center my-3">
-          <img class="my-2 rounded-circle mx-auto" style="width: 8rem; height: 8rem;" src={{customer.imageUrl}} alt="customer image">
-          <div class="card-body">
-            <h5 class="card-title">{{customer.name}}</h5>
-            <span class="card-text" *ngIf="customer.emailAddress">Email: {{customer.emailAddress}}</span> <br/>
-            <span class="card-text" *ngIf="customer.phoneNumber">Phone: {{customer.phoneNumber}}</span> <br/>
-            <span class="card-text">Status: {{customer.status}}</span>
-            <div>
-              <a>
-                <i class="fa fa-eye"></i>
-              </a>
-              <a [routerLink]="['/admin/saveCustomer', customer.id]">
-                <i class="fa fa-pencil"></i>
-              </a>
-              <a (click)="deleteCustomer(customer.id)">
-                <i class="fa fa-trash"></i>
-              </a>
-              
-            </div>
-          </div>
-        </div>
-      </div>
-    </div> 
-    <hr/>
-    <app-grid [editRoute]="'/admin/saveCustomer'" [addRoute]="'/admin/saveCustomer'" [elements]="customers" [callback]="deleteCustomer"></app-grid>
+    <app-grid
+      [editRoute]="'/admin/saveCustomer'"
+      [addRoute]="'/admin/saveCustomer'"
+      [elements]="customers"
+      [callback]="deleteCustomer"
+    >
+  </app-grid>
 </div>

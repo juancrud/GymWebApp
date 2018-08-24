@@ -1,33 +1,10 @@
 <div class="container">
   <h1>Measurements</h1>
-  <button routerLink="/admin/saveMeasurement" type="button" class="btn btn-primary">Add</button>
-  <div class="table-responsive">
-    <table class="table">
-        <thead>
-          <tr>
-            <th>Name</th>
-            <th>Description</th>
-            <th>Status</th>
-            <th>Actions</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr *ngFor="let measurement of measurements">
-            <td>{{measurement.name}}</td>
-            <td>{{measurement.description}}</td>
-            <td>{{measurement.status}}</td>
-            <td>
-                <a [routerLink]="['/admin/saveMeasurement', measurement.id]">
-                  <i class="fa fa-pencil"></i>
-                </a>
-                <a (click)="deleteMeasurement(measurement.id)">
-                  <i class="fa fa-trash"></i>
-                </a>
-            </td>
-          </tr>
-        </tbody>
-      </table>
-  </div>
-  <hr/>
-    <app-grid [editRoute]="'/admin/saveMeasurement'" [addRoute]="'/admin/saveMeasurement'" [elements]="measurements" [callback]="deleteMeasurement"></app-grid>
+    <app-grid
+      [editRoute]="'/admin/saveMeasurement'"
+      [addRoute]="'/admin/saveMeasurement'"
+      [elements]="measurements"
+      [callback]="deleteMeasurement"
+    >
+    </app-grid>
 </div>

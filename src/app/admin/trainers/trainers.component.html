@@ -1,43 +1,10 @@
 <div class="container">
   <h1>Trainers</h1>
-  <button routerLink="/admin/saveTrainer" type="button" class="btn btn-primary">Add</button>
-  <div class="table-responsive">
-      <table class="table">
-          <thead>
-            <tr>
-              <th>Name</th>
-              <th>Document Id</th>
-              <th>Gender</th>
-              <th>Birthday</th>
-              <th>Address</th>
-              <th>Email</th>
-              <th>Phone</th>
-              <th>Status</th>
-              <th>Actions</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr *ngFor="let trainer of trainers">
-              <td>{{trainer.name}}</td>
-              <td>{{trainer.documentId}}</td>
-              <td>{{trainer.gender}}</td>
-              <td>{{trainer.birthDay | date:'MMM-dd-yyyy'}}</td>
-              <td>{{trainer.address}}</td>
-              <td>{{trainer.emailAddress}}</td>
-              <td>{{trainer.phoneNumber}}</td>
-              <td>{{trainer.status}}</td>
-              <td>
-                  <a [routerLink]="['/admin/saveTrainer', trainer.id]">
-                    <i class="fa fa-pencil"></i>
-                  </a>
-                  <a (click)="deleteTrainer(trainer.id)">
-                    <i class="fa fa-trash"></i>
-                  </a>
-              </td>
-            </tr>
-          </tbody>
-        </table>
-  </div>
-  <hr/>
-    <app-grid [editRoute]="'/admin/saveTrainer'" [addRoute]="'/admin/saveTrainer'" [elements]="trainers" [callback]="deleteTrainer"></app-grid>
+    <app-grid
+      [editRoute]="'/admin/saveTrainer'"
+      [addRoute]="'/admin/saveTrainer'"
+      [elements]="trainers"
+      [callback]="deleteTrainer"
+    >
+    </app-grid>
 </div>
