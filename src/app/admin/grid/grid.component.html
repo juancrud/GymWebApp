@@ -28,7 +28,7 @@
           <a [routerLink]="[editRoute, element.id]">
             <i class="fa fa-pencil"></i>
           </a>
-          <a (click)="callback(element.id)">
+          <a (click)="fireMyEvent(element.id)">
             <i class="fa fa-trash"></i>
           </a> 
         </div>

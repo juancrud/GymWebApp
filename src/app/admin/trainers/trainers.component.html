@@ -1,10 +1,12 @@
 <div class="container">
   <h1>Trainers</h1>
+    <app-loading *ngIf="!trainers"></app-loading>
     <app-grid
+      *ngIf="trainers"
       [editRoute]="'/admin/saveTrainer'"
       [addRoute]="'/admin/saveTrainer'"
       [elements]="trainers"
-      [callback]="deleteTrainer"
+      (myEvent)="deleteTrainer($event)"
     >
     </app-grid>
 </div>

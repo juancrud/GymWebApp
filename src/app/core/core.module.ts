@@ -25,7 +25,7 @@ import { ExerciseService } from './services/exercise.service';
     HeaderComponent,
     FooterComponent,
     SidebarComponent,
-    HomeComponent
+    HomeComponent,
   ],
   exports:[
     RouterModule,
