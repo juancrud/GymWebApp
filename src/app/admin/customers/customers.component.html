@@ -1,10 +1,12 @@
 <div class="container">
   <h1>Customers</h1>
+    <app-loading *ngIf="!customers"></app-loading>
     <app-grid
+      *ngIf="customers"
       [editRoute]="'/admin/saveCustomer'"
       [addRoute]="'/admin/saveCustomer'"
       [elements]="customers"
-      [callback]="deleteCustomer"
+      (myEvent)="deleteCustomer($event)"
     >
   </app-grid>
 </div>
