@@ -18,12 +18,10 @@ export class CustomersComponent implements OnInit {
   }
 
   deleteCustomer(id: number) {
-    console.log('customers', this.customers);
-    //console.log('elements', this.elements);
-    // let customer = this.customers.find(c => c.id === id);
-    // customer.status = CustomerStatus.Deleted;
-    // this.customerService.saveCustomer(customer)
-    //   .subscribe(m => console.log('deleted'));
+    let customer = this.customers.find(c => c.id === id);
+    customer.status = CustomerStatus.Deleted;
+    this.customerService.saveCustomer(customer)
+      .subscribe(m => console.log('deleted'));
   }
 
 }

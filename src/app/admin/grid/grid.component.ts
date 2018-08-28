@@ -7,15 +7,19 @@ import { GridModel } from '../../core/models/GridModel';
   styleUrls: ['./grid.component.scss']
 })
 export class GridComponent implements OnInit {
-  @Input() callback: Function;
   @Input() addRoute: string;
   @Input() editRoute: string;
   @Input() elements: GridModel[];
+  @Output() myEvent: EventEmitter<number> = new EventEmitter<number>();
 
   constructor() { }
 
   ngOnInit() {
   
+  }
+
+  fireMyEvent(id) {
+    this.myEvent.emit(id);
   }
 
 }
