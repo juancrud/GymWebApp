@@ -4,7 +4,7 @@
       [editRoute]="'/admin/saveExerciseCategory'"
       [addRoute]="'/admin/saveExerciseCategory'"
       [elements]="exerciseCategories"
-      [callback]="deleteExerciseCategory"
+      (myEvent)="deleteExerciseCategory($event)"
     >
   </app-grid>
 </div>
