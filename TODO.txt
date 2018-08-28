@@ -5,7 +5,7 @@
 - (soft) delete operations on measurements and exercises
 - Exercises (+categories)
 - date fields
-- Add pictures
+- Add pictures *
 - handle httpErrors
 - handle httprequest latency(loading)
 - improve services implementations
