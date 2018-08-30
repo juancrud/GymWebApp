@@ -25,7 +25,8 @@ export class TrainerSaveComponent implements OnInit {
     'address': '',
     'emailAddress': '',
     'phoneNumber': '',
-    'status': ''
+    'status': '',
+    'photo': ''
   };
   validationMessages = {
     'documentId': {
@@ -49,6 +50,9 @@ export class TrainerSaveComponent implements OnInit {
     },
     'status': {
       'required': 'Status is required.'
+    },
+    'photo': {
+      
     }
   };
 
@@ -88,7 +92,8 @@ export class TrainerSaveComponent implements OnInit {
       address: ['', []],
       emailAddress: ['', [Validators.email]],
       phoneNumber: ['', []],
-      status: ['', [Validators.required]]
+      status: ['', [Validators.required]],
+      photo: ['', []]
     });
 
     this.form.valueChanges.subscribe(data => this.onValueChanged());

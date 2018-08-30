@@ -8,6 +8,7 @@ export class Trainer {
 	emailAddress: string;
 	phoneNumber: number;
 	status: TrainerStatus;
+	imageUrl: string;
 }
 
 export enum TrainerStatus {

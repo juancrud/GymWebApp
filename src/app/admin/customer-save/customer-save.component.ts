@@ -26,7 +26,8 @@ export class CustomerSaveComponent implements OnInit {
     'emailAddress': '',
     'phoneNumber': '',
     'height': '',
-    'status': ''
+    'status': '',
+    'photo': ''
   };
   validationMessages = {
     'documentId': {
@@ -53,6 +54,9 @@ export class CustomerSaveComponent implements OnInit {
     },
     'status': {
       'required': 'Status is required.'
+    },
+    'photo': {
+
     }
   };
 
@@ -93,7 +97,8 @@ export class CustomerSaveComponent implements OnInit {
       emailAddress: ['', [Validators.email]],
       phoneNumber: ['', []],
       height: ['', [Validators.required]],
-      status: ['', [Validators.required]]
+      status: ['', [Validators.required]],
+      photo: ['', []]
     });
 
     this.form.valueChanges.subscribe(data => this.onValueChanged());
