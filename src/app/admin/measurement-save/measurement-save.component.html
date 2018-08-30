@@ -1,11 +1,11 @@
-<div class="container">
-  <h1>{{measurement.id ? "Edit Measurement" : "Add Measurement"}}</h1>
+<div class="container px-5">
+  <h1 class="text-center">{{measurement.id ? "Edit Measurement" : "Add Measurement"}}</h1>
 
   <!-- <p>Debugging info</p>
   <p>Measurement: {{measurement | json}}</p>
   <p>Errors: {{formErrors | json}}</p> -->
 
-  <form novalidate [formGroup]="form" (ngSubmit)="formSubmit()">
+  <form class="px-5 py-5" novalidate [formGroup]="form" (ngSubmit)="formSubmit()">
     <div class="form-row">
       <div class="form-group col-3">
         <label for="name">Name</label>
