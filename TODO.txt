@@ -2,9 +2,12 @@ TASKS:
 - general sidebar component
 
 * AdminModule:
+- Improve ALL Edit/Add forms                        Gaby
+- Filters on Grid component                         Gaby
+- picture list component (view, data mapping)       Gaby
+- handle httpErrors => errorComponent
+- improve services implementations
 - Add Loading component into other components
-- picture list component (view, data mapping)
-- Filters on Grid component
 - Exercises (+categories)
 - date fields
 - Add pictures *
