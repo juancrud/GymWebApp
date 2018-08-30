@@ -14,6 +14,7 @@ import { MeasurementService } from './services/measurement.service';
 import { CustomerService } from './services/customer.service';
 import { ExerciseCategoryService } from './services/exercise-category.service';
 import { ExerciseService } from './services/exercise.service';
+import { LoginComponent } from './login/login.component';
 
 @NgModule({
   imports: [
@@ -26,6 +27,7 @@ import { ExerciseService } from './services/exercise.service';
     FooterComponent,
     SidebarComponent,
     HomeComponent,
+    LoginComponent,
   ],
   exports:[
     RouterModule,
