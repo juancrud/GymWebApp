@@ -11,8 +11,6 @@ TASKS:
 - Exercises (+categories)
 - date fields
 - Add pictures *
-- handle httpErrors
-- improve services implementations
 - improve form implementation
 - admin dashboard
 
