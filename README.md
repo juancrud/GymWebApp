@@ -6,7 +6,7 @@ This is a multi-module web application.
 To run it locally, just follow these steps:
 1. Install npm
 2. Install angular-cli
-3. npm install
+3. Run npm install
 4. Run ng serve
 5. Browse to localhost:4200
 
@@ -16,3 +16,4 @@ Installed on Heroku. Browse to https://juancrud-gym-app.herokuapp.com/ to see th
 
 Golden Rules: 
 
+1. Every value in metric system.

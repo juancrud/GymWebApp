@@ -17,6 +17,7 @@ export class CustomerSaveComponent implements OnInit {
   statuses: CustomerStatus[] = [CustomerStatus.Active, CustomerStatus.Inactive, CustomerStatus.Deleted];
 
   form: FormGroup;
+  fileToUpload: File = null;
   formErrors = {
     'documentId': '',
     'name': '',
