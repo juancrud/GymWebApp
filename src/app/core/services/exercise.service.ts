@@ -11,17 +11,25 @@ export class ExerciseService {
   constructor(private http: Http, private httpProcessor: HttpProcessorService) { }
 
   getExercises(): Observable<Exercise[]> {
-    return this.http.get(baseURL + 'exercises/').map(res => this.httpProcessor.getData(res));
+    return this.http.get(baseURL + 'exercises/')
+      .map(res => this.httpProcessor.getData(res))
+      .catch(error => this.httpProcessor.handleError(error));
   }
 
   getExercise(id: number): Observable<Exercise> {
-    return this.http.get(baseURL + 'exercises/' + id).map(res => this.httpProcessor.getData(res));
+    return this.http.get(baseURL + 'exercises/' + id)
+      .map(res => this.httpProcessor.getData(res))
+      .catch(error => this.httpProcessor.handleError(error));
   }
 
   saveExercise(exercise: Exercise): Observable<Exercise> {
     return exercise.id ?
-      this.http.put(baseURL + 'exercises/', exercise).map(res => this.httpProcessor.getData(res)) :
-      this.http.post(baseURL + 'exercises/', exercise).map(res => this.httpProcessor.getData(res));
+      this.http.put(baseURL + 'exercises/', exercise)
+        .map(res => this.httpProcessor.getData(res))
+        .catch(error => this.httpProcessor.handleError(error)) :
+      this.http.post(baseURL + 'exercises/', exercise)
+        .map(res => this.httpProcessor.getData(res))
+        .catch(error => this.httpProcessor.handleError(error));
   }
 
 }

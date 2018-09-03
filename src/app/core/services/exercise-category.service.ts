@@ -11,17 +11,25 @@ export class ExerciseCategoryService {
   constructor(private http: Http, private httpProcessor: HttpProcessorService) { }
 
   getExerciseCategories(): Observable<ExerciseCategory[]> {
-    return this.http.get(baseURL + 'exerciseCategories/').map(res => this.httpProcessor.getData(res));
+    return this.http.get(baseURL + 'exerciseCategories/')
+      .map(res => this.httpProcessor.getData(res))
+      .catch(error => this.httpProcessor.handleError(error));
   }
 
   getExerciseCategory(id: number): Observable<ExerciseCategory> {
-    return this.http.get(baseURL + 'exerciseCategories/' + id).map(res => this.httpProcessor.getData(res));
+    return this.http.get(baseURL + 'exerciseCategories/' + id)
+      .map(res => this.httpProcessor.getData(res))
+      .catch(error => this.httpProcessor.handleError(error));
   }
 
   saveExerciseCategory(exerciseCategory: ExerciseCategory): Observable<ExerciseCategory> {
     return exerciseCategory.id ?
-      this.http.put(baseURL + 'exerciseCategories/', exerciseCategory).map(res => this.httpProcessor.getData(res)) :
-      this.http.post(baseURL + 'exerciseCategories/', exerciseCategory).map(res => this.httpProcessor.getData(res));
+      this.http.put(baseURL + 'exerciseCategories/', exerciseCategory)
+        .map(res => this.httpProcessor.getData(res))
+        .catch(error => this.httpProcessor.handleError(error)) :
+      this.http.post(baseURL + 'exerciseCategories/', exerciseCategory)
+        .map(res => this.httpProcessor.getData(res))
+        .catch(error => this.httpProcessor.handleError(error));
   }
 
 }

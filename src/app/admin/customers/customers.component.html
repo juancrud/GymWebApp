@@ -1,6 +1,6 @@
 <div class="container">
   <h1>Customers</h1>
-    <app-loading *ngIf="!customers"></app-loading>
+    <app-loading *ngIf="!customers && !error"></app-loading>
     <app-grid
       *ngIf="customers"
       [editRoute]="'/admin/saveCustomer'"
@@ -9,5 +9,5 @@
       (myEvent)="deleteCustomer($event)"
     >
   </app-grid>
-  <app-error></app-error>
+  <app-error *ngIf="error" [error]="error"></app-error>
 </div>
