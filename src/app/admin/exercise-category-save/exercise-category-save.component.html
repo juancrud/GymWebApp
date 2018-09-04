@@ -1,11 +1,11 @@
 <div class="container px-5">
-  <h1>{{exerciseCategory.id ? "Edit Exercise Category" : "Add Exercise Category"}}</h1>
+  <h1>{{exerciseCategory && exerciseCategory.id ? "Edit Exercise Category" : "Add Exercise Category"}}</h1>
 
   <!-- <p>Debugging info</p>
   <p>ExerciseCategory: {{exerciseCategory | json}}</p>
   <p>Errors: {{formErrors | json}}</p> -->
 
-  <form novalidate [formGroup]="form" (ngSubmit)="formSubmit()">
+  <form novalidate [formGroup]="form" (ngSubmit)="formSubmit()" *ngIf="exerciseCategory">
     <div class="form-row">
       <div class="form-group col-3">
         <label for="name">Name</label>
@@ -45,8 +45,9 @@
         </div>
       </div>
     </div>
-
     <button type="submit" class="btn btn-primary" [disabled]="form.invalid">Save</button>
   </form>
+  <app-loading *ngIf="!exerciseCategory && !error"></app-loading>
+  <app-error *ngIf="error" [error]="error"></app-error>
 </div>
   

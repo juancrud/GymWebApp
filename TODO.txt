@@ -2,10 +2,10 @@ TASKS:
 - general sidebar component
 
 * AdminModule:
+- handle httpErrors => errorComponent               JC      DONE
 - Improve ALL Edit/Add forms                        Gaby
 - Filters on Grid component                         Gaby
 - picture list component (view, data mapping)       Gaby
-- handle httpErrors => errorComponent
 - improve services implementations
 - Add Loading component into other components
 - Exercises (+categories)
