@@ -13,7 +13,7 @@ export class TrainerService {
   constructor(private http: Http, private httpProcessor: HttpProcessorService) { }
 
   getTrainers(): Observable<Trainer[]> {
-    return this.http.get(baseURL + 'trainers/')
+    return this.http.get(baseURL + 'trainers2/')
       .map(res => this.httpProcessor.getData(res))
       .catch(error => this.httpProcessor.handleError(error));
   }

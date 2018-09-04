@@ -1,11 +1,14 @@
 <div class="container">
   <h1>Exercise Categories</h1>
     <app-grid
+      *ngIf="exerciseCategories"
       [editRoute]="'/admin/saveExerciseCategory'"
       [addRoute]="'/admin/saveExerciseCategory'"
       [elements]="exerciseCategories"
       (myEvent)="deleteExerciseCategory($event)"
     >
   </app-grid>
+  <app-loading *ngIf="!exerciseCategories && !error"></app-loading>
+  <app-error *ngIf="error" [error]="error"></app-error>
 </div>
   

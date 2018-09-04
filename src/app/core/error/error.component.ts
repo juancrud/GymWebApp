@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { Error } from '../models/Error';
 
 @Component({
   selector: 'app-error',
@@ -6,12 +7,17 @@ import { Component, OnInit, Input } from '@angular/core';
   styleUrls: ['./error.component.scss']
 })
 export class ErrorComponent implements OnInit {
-  errorTitle: string = 'Error';
-  errorMessage: string = 'An internal error happened.';
+  @Input() error: Error;
+  showDetails: boolean;
 
   constructor() { }
 
   ngOnInit() {
+  }
+
+  toggleDetails() {
+    console.log("hola");
+    this.showDetails = !this.showDetails;
   }
 
 }

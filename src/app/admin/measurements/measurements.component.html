@@ -1,10 +1,13 @@
 <div class="container">
   <h1>Measurements</h1>
     <app-grid
+      *ngIf="measurements"
       [editRoute]="'/admin/saveMeasurement'"
       [addRoute]="'/admin/saveMeasurement'"
       [elements]="measurements"
       (myEvent)="deleteMeasurement($event)"
     >
     </app-grid>
+    <app-loading *ngIf="!measurements && !error"></app-loading>
+    <app-error *ngIf="error" [error]="error"></app-error>
 </div>

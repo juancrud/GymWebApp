@@ -9,19 +9,20 @@ import { ExerciseCategoryService } from '../../core/services/exercise-category.s
 })
 export class ExerciseCategoriesComponent implements OnInit {
   exerciseCategories: ExerciseCategory[];
+  error: Error;
 
   constructor(private exerciseCategoryService: ExerciseCategoryService) { }
 
   ngOnInit() {
     this.exerciseCategoryService.getExerciseCategories()
-      .subscribe(items => this.exerciseCategories = items);
+      .subscribe(items => this.exerciseCategories = items, error => this.error = error);
   }
 
   deleteExerciseCategory(id: number) {
     let exerciseCategory = this.exerciseCategories.find(c => c.id === id);
     exerciseCategory.status = ExerciseCategoryStatus.Deleted;
     this.exerciseCategoryService.saveExerciseCategory(exerciseCategory)
-      .subscribe(m => console.log('deleted'));
+      .subscribe(m => console.log('deleted'), error => this.error = error);
   }
 
 }
