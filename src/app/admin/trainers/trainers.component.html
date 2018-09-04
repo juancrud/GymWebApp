@@ -1,6 +1,5 @@
 <div class="container">
   <h1>Trainers</h1>
-    <app-loading *ngIf="!trainers"></app-loading>
     <app-grid
       *ngIf="trainers"
       [editRoute]="'/admin/saveTrainer'"
@@ -9,4 +8,6 @@
       (myEvent)="deleteTrainer($event)"
     >
     </app-grid>
+    <app-loading *ngIf="!trainers  && !error"></app-loading>
+    <app-error *ngIf="error" [error]="error"></app-error>
 </div>

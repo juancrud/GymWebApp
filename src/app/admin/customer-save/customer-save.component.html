@@ -1,11 +1,11 @@
 <div class="container px-5">
-  <h1 class="text-center">{{customer.id ? "Edit Customer" : "Add Customer"}}</h1>
+  <h1 class="text-center">{{customer && customer.id ? "Edit Customer" : "Add Customer"}}</h1>
 
   <!-- <p>Debugging info</p>
   <p>Customer: {{customer | json}}</p>
   <p>Errors: {{formErrors | json}}</p> -->
 
-  <form class="px-5 py-5" novalidate [formGroup]="form" (ngSubmit)="formSubmit()">
+  <form class="px-5 py-5" novalidate [formGroup]="form" (ngSubmit)="formSubmit()" *ngIf="customer">
     <div class="form-row">
       <div class="form-group float-right">
           <img class="my-2 rounded-circle mx-auto"
@@ -79,4 +79,6 @@
     </div>
     <button type="submit" class="btn btn-primary" [disabled]="form.invalid">Save</button>
   </form>
+  <app-loading *ngIf="!customer && !error"></app-loading>
+  <app-error *ngIf="error" [error]="error"></app-error>
 </div>

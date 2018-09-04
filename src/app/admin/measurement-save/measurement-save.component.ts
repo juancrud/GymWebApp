@@ -13,7 +13,8 @@ import { Observable } from '../../../../node_modules/rxjs/Observable';
   styleUrls: ['./measurement-save.component.scss']
 })
 export class MeasurementSaveComponent implements OnInit {
-  measurement: Measurement = new Measurement();
+  measurement: Measurement;
+  error: Error;
 
   form: FormGroup;
   formErrors = {
@@ -53,9 +54,7 @@ export class MeasurementSaveComponent implements OnInit {
           o.complete();
         });
       })
-      .subscribe(measurement => {
-        this.measurement = measurement;
-      });
+      .subscribe(measurement => this.measurement = measurement, error => this.error = error);
   }
 
   createForm() {
@@ -85,7 +84,7 @@ export class MeasurementSaveComponent implements OnInit {
 
   formSubmit() {
     this.measurementService.saveMeasurement(this.measurement)
-      .subscribe(m => this.router.navigateByUrl("/admin/measurements"), e => console.log('error', e));
+      .subscribe(m => this.router.navigateByUrl("/admin/measurements"), error => this.error = error);
   };
 
 }

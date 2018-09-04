@@ -1,11 +1,11 @@
 <div class="container px-5">
-  <h1 class="text-center">{{measurement.id ? "Edit Measurement" : "Add Measurement"}}</h1>
+  <h1 class="text-center">{{measurement && measurement.id ? "Edit Measurement" : "Add Measurement"}}</h1>
 
   <!-- <p>Debugging info</p>
   <p>Measurement: {{measurement | json}}</p>
   <p>Errors: {{formErrors | json}}</p> -->
 
-  <form class="px-5 py-5" novalidate [formGroup]="form" (ngSubmit)="formSubmit()">
+  <form class="px-5 py-5" novalidate [formGroup]="form" (ngSubmit)="formSubmit()" *ngIf="measurement">
     <div class="form-row">
       <div class="form-group col-3">
         <label for="name">Name</label>
@@ -20,4 +20,6 @@
     </div>
     <button type="submit" class="btn btn-primary" [disabled]="form.invalid">Save</button>
   </form>
+  <app-loading *ngIf="!measurement && !error"></app-loading>
+  <app-error *ngIf="error" [error]="error"></app-error>
 </div>

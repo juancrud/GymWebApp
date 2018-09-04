@@ -9,12 +9,13 @@ import { TrainerService } from '../../core/services/trainer.service';
 })
 export class TrainersComponent implements OnInit {
   trainers: Trainer[];
+  error: Error;
 
   constructor(private trainerService: TrainerService) { }
 
   ngOnInit() {
     this.trainerService.getTrainers()
-      .subscribe(trainers => this.trainers = trainers);
+      .subscribe(trainers => this.trainers = trainers, error => this.error = error);
 
   }
 
@@ -22,7 +23,7 @@ export class TrainersComponent implements OnInit {
     let trainer = this.trainers.find(c => c.id === id);
     trainer.status = TrainerStatus.Deleted;
     this.trainerService.saveTrainer(trainer)
-      .subscribe(m => console.log('deleted'));
+      .subscribe(m => console.log('deleted'), error => this.error = error);
   }
 
 }

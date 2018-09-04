@@ -12,9 +12,10 @@ import { Gender } from '../../core/models/Gender';
   styleUrls: ['./trainer-save.component.scss']
 })
 export class TrainerSaveComponent implements OnInit {
-  trainer: Trainer = new Trainer();
+  trainer: Trainer;
   genders: Gender[] = [Gender.Male, Gender.Female];
   statuses: TrainerStatus[] = [TrainerStatus.Active, TrainerStatus.Inactive, TrainerStatus.Deleted];
+  error: Error;
 
   form: FormGroup;
   formErrors = {
@@ -78,9 +79,7 @@ export class TrainerSaveComponent implements OnInit {
           o.complete();
         });
       })
-      .subscribe(trainer => {
-        this.trainer = trainer;
-      });
+      .subscribe(trainer => this.trainer = trainer, error => this.error = error);
   }
 
   createForm() {
@@ -117,7 +116,7 @@ export class TrainerSaveComponent implements OnInit {
 
   formSubmit(){
     this.trainerService.saveTrainer(this.trainer)
-      .subscribe(m => this.router.navigateByUrl("/admin/trainers"), e => console.log('error', e));
+      .subscribe(m => this.router.navigateByUrl("/admin/trainers"), error => this.error = error);
   }
 
 }

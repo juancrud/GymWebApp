@@ -3,19 +3,17 @@ TASKS:
 -Research about Asana Account                       Gaby
 
 * AdminModule:
+- handle httpErrors => errorComponent               JC      DONE
 - Improve ALL Edit/Add forms*                       Gaby
     -Create photo field. *
     -Create input for uploading photo correctly
 - Filters on Grid component                         Gaby
 - picture list component (view, data mapping)       Gaby
-- handle httpErrors => errorComponent
 - improve services implementations
 - Add Loading component into other components
 - Exercises (+categories)
 - date fields (UTC in server saved)
 - Add pictures *
-- handle httpErrors
-- improve services implementations
 - improve form implementation
 - admin dashboard
 

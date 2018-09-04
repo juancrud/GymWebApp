@@ -12,8 +12,9 @@ import { Exercise } from '../../core/models/Exercise';
   styleUrls: ['./exercise-category-save.component.scss']
 })
 export class ExerciseCategorySaveComponent implements OnInit {
-  exerciseCategory: ExerciseCategory = new ExerciseCategory();
+  exerciseCategory: ExerciseCategory;
   exercises: Exercise[] = [];
+  error: Error;
   
   form: FormGroup;
   formErrors = {
@@ -47,9 +48,7 @@ export class ExerciseCategorySaveComponent implements OnInit {
           o.complete();
         });
       })
-      .subscribe(exerciseCategory => {
-        this.exerciseCategory = exerciseCategory;
-      });
+      .subscribe(exerciseCategory => this.exerciseCategory = exerciseCategory, error => this.error = error);
   }
 
   createForm() {
@@ -78,7 +77,7 @@ export class ExerciseCategorySaveComponent implements OnInit {
 
   formSubmit(){
     this.exerciseCategoryService.saveExerciseCategory(this.exerciseCategory)
-      .subscribe(m => this.router.navigateByUrl("/admin/exercises"), e => console.log('error', e));
+      .subscribe(m => this.router.navigateByUrl("/admin/exercises"), error => this.error = error);
   }
 
 }

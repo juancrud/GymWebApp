@@ -12,9 +12,10 @@ import { Gender } from '../../core/models/Gender';
   styleUrls: ['./customer-save.component.scss']
 })
 export class CustomerSaveComponent implements OnInit {
-  customer: Customer = new Customer();
+  customer: Customer;
   genders: Gender[] = [Gender.Male, Gender.Female];
   statuses: CustomerStatus[] = [CustomerStatus.Active, CustomerStatus.Inactive, CustomerStatus.Deleted];
+  error: Error;
 
   form: FormGroup;
   fileToUpload: File = null;
@@ -83,9 +84,7 @@ export class CustomerSaveComponent implements OnInit {
           o.complete();
         });
       })
-      .subscribe(customer => {
-        this.customer = customer;
-      });
+      .subscribe(customer => this.customer = customer, error => this.error = error);
   }
 
   createForm() {
@@ -123,7 +122,7 @@ export class CustomerSaveComponent implements OnInit {
 
   formSubmit(){
     this.customerService.saveCustomer(this.customer)
-      .subscribe(m => this.router.navigateByUrl("/admin/customers"), e => console.log('error', e));
+      .subscribe(m => this.router.navigateByUrl("/admin/customers"), error => this.error = error);
   }
 
 }

@@ -15,6 +15,7 @@ import { CustomerService } from './services/customer.service';
 import { ExerciseCategoryService } from './services/exercise-category.service';
 import { ExerciseService } from './services/exercise.service';
 import { LoginComponent } from './login/login.component';
+import { HttpProcessorService } from './services/http-processor.service';
 
 @NgModule({
   imports: [
@@ -40,7 +41,8 @@ import { LoginComponent } from './login/login.component';
     MeasurementService,
     CustomerService,
     ExerciseCategoryService,
-    ExerciseService
+    ExerciseService,
+    HttpProcessorService
   ]
 })
 export class CoreModule { }
