@@ -11,15 +11,20 @@ export class GridComponent implements OnInit {
   @Input() editRoute: string;
   @Input() elements: GridModel[];
   @Output() myEvent: EventEmitter<number> = new EventEmitter<number>();
-
-  constructor() { }
+  filteredElements: GridModel[];
 
   ngOnInit() {
-  
+    this.filteredElements = this.elements;
   }
 
   fireMyEvent(id) {
     this.myEvent.emit(id);
   }
 
+  onKeyUp(value: string) {
+    value = value.toLocaleLowerCase();
+    this.filteredElements = this.elements
+      .filter(element => element.name.toLocaleLowerCase().indexOf(value) != -1 || 
+              element.status.toLocaleLowerCase().indexOf(value) != -1);
+  }
 }
