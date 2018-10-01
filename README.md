@@ -15,5 +15,4 @@ It's intended to be deployed into Heroku. The github is connected to Heroku so e
 Installed on Heroku. Browse to https://juancrud-gym-app.herokuapp.com/ to see the live version.
 
 Golden Rules: 
-
 1. Every value in metric system.

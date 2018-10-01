@@ -1,6 +1,6 @@
 TASKS:
-- general sidebar component
--Research about Asana Account                       Gaby
+- general sidebar component                         
+-Research about Asana Account                       Gaby    DONE
 
 * AdminModule:
 - handle httpErrors => errorComponent               JC      DONE
@@ -9,13 +9,13 @@ TASKS:
     -Create input for uploading photo correctly
 - Filters on Grid component                         Gaby
 - picture list component (view, data mapping)       Gaby
-- improve services implementations
-- Add Loading component into other components
-- Exercises (+categories)
-- date fields (UTC in server saved)
-- Add pictures *
-- improve form implementation
-- admin dashboard
+- improve services implementations                  
+- Add Loading component into other components       
+- Exercises (+categories)                           
+- date fields (UTC in server saved)                 
+- Add pictures *                                    
+- improve form implementation                       
+- admin dashboard                                   
 
 * Login:
 * Trainers module:

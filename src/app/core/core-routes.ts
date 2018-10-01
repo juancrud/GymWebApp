@@ -6,6 +6,6 @@ export const routes: Routes = [
     { path: '', redirectTo: 'home', pathMatch: 'full' },
     { path: 'home', component: HomeComponent },
     { path: 'admin', loadChildren: '../admin/admin.module#AdminModule' },
-    //{ path: 'customer', loadChildren: '../customer/customer.module#CustomerModule' },
-    //{ path: 'trainer', loadChildren: '../trainer/trainer.module#TrainerModule' },
+    { path: 'customer', loadChildren: '../customer/customer.module#CustomerModule' },
+    { path: 'trainer', loadChildren: '../trainer/trainer.module#TrainerModule' },
 ];
