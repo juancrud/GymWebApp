@@ -17,13 +17,15 @@ import { ExerciseSaveComponent } from './exercise-save/exercise-save.component';
 import { GridComponent } from './grid/grid.component';
 import { LoadingComponent } from '../core/loading/loading.component';
 import { ErrorComponent } from '../core/error/error.component';
+import { SharedModule } from '../shared/shared.module';
 
 @NgModule({
   imports: [
     CommonModule,
     AdminRoutingModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    SharedModule
   ],
   declarations: [
     AdminComponent, 
