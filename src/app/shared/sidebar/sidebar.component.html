@@ -1,0 +1,9 @@
+<h1>Shared Sidebar Component</h1>
+{{items | json}}
+<ul>
+  <li *ngFor="let item of items">
+      <a routerLink={{item.link}}>
+        <span>{{item.label}}</span>
+      </a>
+  </li>
+</ul>
