@@ -1,2 +1,13 @@
-<app-sidebar [items]="sidebarItems"></app-sidebar>
-<router-outlet></router-outlet>
+<div id="wrapper">
+    <app-sidebar [items]="sidebarItems" class="sidebar navbar-nav"></app-sidebar>
+    <div id="content-wrapper">
+        <router-outlet></router-outlet>
+        <footer class="sticky-footer">
+            <div class="container my-auto">
+                <div class="copyright text-center my-auto">
+                    <span>Copyright © Your Website 2018</span>
+                </div>
+            </div>
+        </footer>
+    </div>
+</div>
