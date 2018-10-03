@@ -18,4 +18,5 @@ export class SidebarComponent implements OnInit {
 export class SidebarItem {
   label: string;
   link: string;
+  icon: string;
 }

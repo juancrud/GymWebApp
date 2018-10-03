@@ -8,10 +8,10 @@ import { SidebarItem } from '../shared/sidebar/sidebar.component';
 })
 export class TrainerComponent implements OnInit {
   sidebarItems: SidebarItem[] = [
-    { label: "Dashboard", link: "/trainer/dashboard" },
-    { label: "Test 1t", link: "/trainer" },
-    { label: "Test 2t", link: "/trainer" },
-    { label: "Test 3t", link: "/trainer" },
+    { label: "Dashboard", link: "/trainer/dashboard", icon: "fa-folder" },
+    { label: "Test 1t", link: "/trainer", icon: "fa-folder" },
+    { label: "Test 2t", link: "/trainer", icon: "fa-folder" },
+    { label: "Test 3t", link: "/trainer", icon: "fa-folder" },
   ];
 
   constructor() { }
