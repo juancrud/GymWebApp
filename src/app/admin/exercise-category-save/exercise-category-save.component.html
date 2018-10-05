@@ -12,6 +12,18 @@
         <input [(ngModel)]="exerciseCategory.name" class="form-control" formControlName="name" type="text" />
         <span [hidden]="!formErrors.name">{{formErrors.name}}</span>
       </div>
+      <div class="form-group col-6">
+        <label for="description">Description</label>
+        <input [(ngModel)]="exerciseCategory.description" class="form-control" formControlName="description" type="text" />
+        <span [hidden]="!formErrors.description">{{formErrors.description}}</span>
+      </div>
+      <div class="form-group col-2">
+        <label for="status">Status</label>
+        <select [(ngModel)]="exerciseCategory.status" class="form-control" formControlName="status" >
+          <option *ngFor="let s of statuses" [ngValue]="s">{{s}}</option>
+        </select>
+        <span [hidden]="!formErrors.status">{{formErrors.status}}</span>
+      </div>
     </div>
 
     <div class="form-row">
@@ -32,12 +44,12 @@
                 <td>{{exercise.name}}</td>
                 <td>{{exercise.description}}</td>
                 <td>
-                    <a [routerLink]="['/admin/saveExercise', exercise.id]">
-                      <i class="fa fa-pencil"></i>
-                    </a>
-                    <a (click)="deleteExercise(exercise.id)">
-                      <i class="fa fa-trash"></i>
-                    </a>
+                  <a [routerLink]="['/admin/saveExercise', exercise.id]">
+                    <i class="fa fa-pencil"></i>
+                  </a>
+                  <a (click)="deleteExercise(exercise.id)">
+                    <i class="fa fa-trash"></i>
+                  </a>
                 </td>
               </tr>
             </tbody>

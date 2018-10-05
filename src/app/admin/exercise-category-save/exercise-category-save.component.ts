@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ExerciseCategory } from '../../core/models/ExerciseCategory';
+import { ExerciseCategory, ExerciseCategoryStatus } from '../../core/models/ExerciseCategory';
 import { FormGroup, FormBuilder, Validators } from '../../../../node_modules/@angular/forms';
 import { ExerciseCategoryService } from '../../core/services/exercise-category.service';
 import { ActivatedRoute, Router, Params } from '../../../../node_modules/@angular/router';
@@ -14,16 +14,21 @@ import { Exercise } from '../../core/models/Exercise';
 export class ExerciseCategorySaveComponent implements OnInit {
   exerciseCategory: ExerciseCategory;
   exercises: Exercise[] = [];
+  statuses: ExerciseCategoryStatus[] = [ExerciseCategoryStatus.Active, ExerciseCategoryStatus.Inactive, ExerciseCategoryStatus.Deleted];
   error: Error;
   
   form: FormGroup;
   formErrors = {
     'name': '',
+    'description': '',
+    'status': ''
   };
   validationMessages = {
     'name': {
       'required': 'Name is required.'
-    }
+    },
+    'description': {},
+    'status': {}
   };
 
   constructor(
@@ -53,7 +58,9 @@ export class ExerciseCategorySaveComponent implements OnInit {
 
   createForm() {
     this.form = this.formBuilder.group({
-      name: ['', [Validators.required]]
+      name: ['', [Validators.required]],
+      description: ['', []],
+      status: ['', []]
     });
 
     this.form.valueChanges.subscribe(data => this.onValueChanged());
