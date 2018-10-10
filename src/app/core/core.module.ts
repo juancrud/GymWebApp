@@ -16,6 +16,7 @@ import { ExerciseCategoryService } from './services/exercise-category.service';
 import { ExerciseService } from './services/exercise.service';
 import { LoginComponent } from './login/login.component';
 import { HttpProcessorService } from './services/http-processor.service';
+import { Mapper } from './mappers/Mapper';
 
 @NgModule({
   imports: [
@@ -42,7 +43,8 @@ import { HttpProcessorService } from './services/http-processor.service';
     CustomerService,
     ExerciseCategoryService,
     ExerciseService,
-    HttpProcessorService
+    HttpProcessorService,
+    Mapper
   ]
 })
 export class CoreModule { }

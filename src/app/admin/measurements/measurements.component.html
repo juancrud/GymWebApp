@@ -4,7 +4,7 @@
       *ngIf="measurements"
       [editRoute]="'/admin/saveMeasurement'"
       [addRoute]="'/admin/saveMeasurement'"
-      [elements]="measurements"
+      [elements]="mapMeasurements()"
       (myEvent)="deleteMeasurement($event)"
     >
     </app-grid>

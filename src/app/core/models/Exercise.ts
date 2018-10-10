@@ -4,6 +4,7 @@ export class Exercise {
     id: number;
     name: string;
     description: string;
+    imageUrl: string;
     status: ExerciseStatus;
 	exerciseCategory: ExerciseCategory;
 }

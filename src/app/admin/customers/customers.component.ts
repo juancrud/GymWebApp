@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Customer, CustomerStatus } from '../../core/models/Customer';
 import { CustomerService } from '../../core/services/customer.service';
+import { Mapper } from '../../core/mappers/Mapper';
+import { GridModel } from '../../core/models/GridModel';
 
 @Component({
   selector: 'app-customers',
@@ -11,7 +13,7 @@ export class CustomersComponent implements OnInit {
   customers: Customer[];
   error: Error;
 
-  constructor(private customerService: CustomerService) { }
+  constructor(private customerService: CustomerService, private mapper: Mapper) { }
 
   ngOnInit() {
     this.customerService.getCustomers()
@@ -23,6 +25,10 @@ export class CustomersComponent implements OnInit {
     customer.status = CustomerStatus.Deleted;
     this.customerService.saveCustomer(customer)
       .subscribe(m => console.log('deleted'), error => this.error = error);
+  }
+
+  mapCustomers(): GridModel[] {
+    return this.customers.map(x => this.mapper.mapCustomerToGridModel(x))
   }
 
 }

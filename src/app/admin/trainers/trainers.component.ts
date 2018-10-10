@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Trainer, TrainerStatus } from '../../core/models/Trainer';
 import { TrainerService } from '../../core/services/trainer.service';
+import { GridModel } from '../../core/models/GridModel';
+import { Mapper } from '../../core/mappers/Mapper';
 
 @Component({
   selector: 'app-trainers',
@@ -11,7 +13,7 @@ export class TrainersComponent implements OnInit {
   trainers: Trainer[];
   error: Error;
 
-  constructor(private trainerService: TrainerService) { }
+  constructor(private trainerService: TrainerService, private mapper: Mapper) { }
 
   ngOnInit() {
     this.trainerService.getTrainers()
@@ -24,6 +26,10 @@ export class TrainersComponent implements OnInit {
     trainer.status = TrainerStatus.Deleted;
     this.trainerService.saveTrainer(trainer)
       .subscribe(m => console.log('deleted'), error => this.error = error);
+  }
+
+  mapTrainers(): GridModel[] {
+    return this.trainers.map(x => this.mapper.mapTrainerToGridModel(x));
   }
 
 }

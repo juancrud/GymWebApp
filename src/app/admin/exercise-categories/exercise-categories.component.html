@@ -4,7 +4,7 @@
       *ngIf="exerciseCategories"
       [editRoute]="'/admin/saveExerciseCategory'"
       [addRoute]="'/admin/saveExerciseCategory'"
-      [elements]="exerciseCategories"
+      [elements]="mapExerciseCategories()"
       (myEvent)="deleteExerciseCategory($event)"
     >
   </app-grid>

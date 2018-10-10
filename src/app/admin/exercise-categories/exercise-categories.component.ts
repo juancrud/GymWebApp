@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ExerciseCategory, ExerciseCategoryStatus } from '../../core/models/ExerciseCategory';
 import { ExerciseCategoryService } from '../../core/services/exercise-category.service';
+import { GridModel } from '../../core/models/GridModel';
+import { Mapper } from '../../core/mappers/Mapper';
 
 @Component({
   selector: 'app-exercise-categories',
@@ -11,7 +13,7 @@ export class ExerciseCategoriesComponent implements OnInit {
   exerciseCategories: ExerciseCategory[];
   error: Error;
 
-  constructor(private exerciseCategoryService: ExerciseCategoryService) { }
+  constructor(private exerciseCategoryService: ExerciseCategoryService, private mapper: Mapper) { }
 
   ngOnInit() {
     this.exerciseCategoryService.getExerciseCategories()
@@ -25,4 +27,7 @@ export class ExerciseCategoriesComponent implements OnInit {
       .subscribe(m => console.log('deleted'), error => this.error = error);
   }
 
+  mapExerciseCategories(): GridModel[] {
+    return this.exerciseCategories.map(x => this.mapper.mapExercisesCategoriesToGridModel(x));
+  }
 }

@@ -4,6 +4,7 @@ export class ExerciseCategory {
     id: number;
     name: string;
     description: string;
+    imageUrl: string;
     status: ExerciseCategoryStatus;
     exercises: Exercise[];
 }

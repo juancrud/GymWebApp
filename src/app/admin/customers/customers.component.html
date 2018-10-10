@@ -4,7 +4,7 @@
       *ngIf="customers"
       [editRoute]="'/admin/saveCustomer'"
       [addRoute]="'/admin/saveCustomer'"
-      [elements]="customers"
+      [elements]="mapCustomers()"
       (myEvent)="deleteCustomer($event)"
     >
   </app-grid>
