@@ -17,6 +17,8 @@ import { ExerciseService } from './services/exercise.service';
 import { LoginComponent } from './login/login.component';
 import { HttpProcessorService } from './services/http-processor.service';
 import { Mapper } from './mappers/Mapper';
+import { AuthenticationService } from './services/authentication.service';
+import { CallbackComponent } from './callback/callback.component';
 
 @NgModule({
   imports: [
@@ -30,6 +32,7 @@ import { Mapper } from './mappers/Mapper';
     SidebarComponent,
     HomeComponent,
     LoginComponent,
+    CallbackComponent,
   ],
   exports:[
     RouterModule,
@@ -44,7 +47,8 @@ import { Mapper } from './mappers/Mapper';
     ExerciseCategoryService,
     ExerciseService,
     HttpProcessorService,
-    Mapper
+    Mapper,
+    AuthenticationService
   ]
 })
 export class CoreModule { }
