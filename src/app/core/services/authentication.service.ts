@@ -66,8 +66,11 @@ export class AuthenticationService {
           case UserType.Customer:
           self.router.navigate(['/customer']);
             break;
+          default:
+          self.router.navigate(['/home']);
+            break;
         }
-      })
+      }, err => console.log(err))
     });
   };
 
