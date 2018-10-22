@@ -4,6 +4,7 @@ import { TrainerComponent } from './trainer.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { TrainerRoutingModule } from './trainer-routing.module';
 import { SharedModule } from '../shared/shared.module';
+import { CustomersComponent } from './customers/customers.component';
 
 @NgModule({
   imports: [
@@ -13,7 +14,7 @@ import { SharedModule } from '../shared/shared.module';
   ],
   declarations: [
     TrainerComponent, 
-    DashboardComponent
+    DashboardComponent, CustomersComponent
   ]
 })
 export class TrainerModule { }
