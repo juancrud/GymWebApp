@@ -56,7 +56,6 @@ export class AuthenticationService {
     this.getProfile((err, auth0Profile) => {
       let identityId = auth0Profile.sub;
       this.userService.getUserByIdentityId(identityId).subscribe(user => {
-        console.log(user);
         switch(user.type){
           case UserType.Administrator:
             self.router.navigate(['/admin']);

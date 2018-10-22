@@ -1,0 +1,13 @@
+<div class="container">
+  <h2>Error!</h2>
+  <h6>{{error.error}}</h6>
+  <button type="submit" class="btn btn-secondary" (click)="toggleDetails()">{{showDetails ? "Hide Details" : "View Details"}}</button>
+  <div *ngIf="showDetails" class="pt-4">
+    <h6>Error Details</h6>
+    <div class="col-12">{{error.error}}</div>
+    <div class="col-12">Status: {{error.status}}</div>
+    <div class="col-12">Message: {{error.message}}</div>
+    <div class="col-12">Path: {{error.path}}</div>
+    <div class="col-12">Timestamp: {{error.timestamp}}</div>
+  </div>
+</div>
