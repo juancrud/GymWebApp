@@ -15,8 +15,6 @@ import { ExerciseCategoriesComponent } from './exercise-categories/exercise-cate
 import { ExerciseCategorySaveComponent } from './exercise-category-save/exercise-category-save.component';
 import { ExerciseSaveComponent } from './exercise-save/exercise-save.component';
 import { GridComponent } from './grid/grid.component';
-import { LoadingComponent } from '../core/loading/loading.component';
-import { ErrorComponent } from '../core/error/error.component';
 import { SharedModule } from '../shared/shared.module';
 
 @NgModule({
@@ -39,9 +37,7 @@ import { SharedModule } from '../shared/shared.module';
     ExerciseCategoriesComponent,
     ExerciseCategorySaveComponent,
     ExerciseSaveComponent,
-    GridComponent,
-    LoadingComponent,
-    ErrorComponent
+    GridComponent
   ],
   providers: [
   ]

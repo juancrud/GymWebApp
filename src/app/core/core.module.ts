@@ -19,12 +19,16 @@ import { HttpProcessorService } from './services/http-processor.service';
 import { Mapper } from './mappers/Mapper';
 import { AuthenticationService } from './services/authentication.service';
 import { CallbackComponent } from './callback/callback.component';
+import { ProfileComponent } from './profile/profile.component';
+import { UserService } from './services/user.service';
+import { SharedModule } from '../shared/shared.module';
 
 @NgModule({
   imports: [
     CommonModule,
     CoreRoutingModule,
-    HttpModule
+    HttpModule,
+    SharedModule
   ],
   declarations: [
     HeaderComponent,
@@ -33,6 +37,7 @@ import { CallbackComponent } from './callback/callback.component';
     HomeComponent,
     LoginComponent,
     CallbackComponent,
+    ProfileComponent,
   ],
   exports:[
     RouterModule,
@@ -48,7 +53,8 @@ import { CallbackComponent } from './callback/callback.component';
     ExerciseService,
     HttpProcessorService,
     Mapper,
-    AuthenticationService
+    AuthenticationService,
+    UserService
   ]
 })
 export class CoreModule { }
