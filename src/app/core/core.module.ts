@@ -6,7 +6,6 @@ import { RouterModule } from '@angular/router';
 import { HomeComponent } from './home/home.component';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
-import { SidebarComponent } from './sidebar/sidebar.component';
 
 import { HttpModule } from '../../../node_modules/@angular/http';
 import { TrainerService } from './services/trainer.service';
@@ -33,7 +32,6 @@ import { SharedModule } from '../shared/shared.module';
   declarations: [
     HeaderComponent,
     FooterComponent,
-    SidebarComponent,
     HomeComponent,
     LoginComponent,
     CallbackComponent,
@@ -42,8 +40,7 @@ import { SharedModule } from '../shared/shared.module';
   exports:[
     RouterModule,
     HeaderComponent, 
-    FooterComponent,
-    SidebarComponent
+    FooterComponent
   ],
   providers: [
     TrainerService,
