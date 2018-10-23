@@ -13,7 +13,7 @@ export class AuthenticationService {
     clientID: 'lH46jA1MPlkXOPswIh3fNSEsclM6Am4b',
     domain: 'juancrud.auth0.com',
     responseType: 'token id_token',
-    redirectUri: 'https://juancrud.auth0.com/callback',
+    redirectUri: 'https://juancrud-gym-app.herokuapp.com/callback',
     scope: 'openid profile'
   });
 
