@@ -13,7 +13,7 @@ export class AuthenticationService {
     clientID: 'lH46jA1MPlkXOPswIh3fNSEsclM6Am4b',
     domain: 'juancrud.auth0.com',
     responseType: 'token id_token',
-    redirectUri: 'http://localhost:4200/callback',
+    redirectUri: 'https://juancrud.auth0.com/callback',
     scope: 'openid profile'
   });
 
