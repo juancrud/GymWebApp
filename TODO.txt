@@ -1,7 +1,4 @@
 TASKS:
-- general sidebar component                         
--Research about Asana Account                       Gaby    DONE
-
 * AdminModule:
 - handle httpErrors => errorComponent               JC      DONE
 - Improve ALL Edit/Add forms*                       Gaby
