@@ -6,14 +6,15 @@ import { UserProfile } from '../models/UserProfile';
 import { UserService } from './user.service';
 import { UserType } from '../models/User';
 import { UserProfileService } from './user-profile.service';
+import { auth0CallbackUrl, auth0ClientId, auth0Domain } from './Constants';
 
 @Injectable()
 export class AuthenticationService {
   auth0 = new auth0.WebAuth({
-    clientID: 'lH46jA1MPlkXOPswIh3fNSEsclM6Am4b',
-    domain: 'juancrud.auth0.com',
+    clientID: auth0ClientId,
+    domain: auth0Domain,
     responseType: 'token id_token',
-    redirectUri: 'https://juancrud-gym-app.herokuapp.com/callback',
+    redirectUri: auth0CallbackUrl,
     scope: 'openid profile'
   });
 
