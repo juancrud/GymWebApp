@@ -1,9 +1,9 @@
 export class UserProfile {
     id: number;
     identityId: string;
-    userType: string;
+    name: string;
+    pictureUrl: string;
     
-    username: string;
-	name: string;
-	pictureUrl: string;
+    type: string;
+    emailAddress: string;
 }

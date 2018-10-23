@@ -5,6 +5,7 @@ import * as auth0 from 'auth0-js';
 import { UserProfile } from '../models/UserProfile';
 import { UserService } from './user.service';
 import { UserType } from '../models/User';
+import { UserProfileService } from './user-profile.service';
 
 @Injectable()
 export class AuthenticationService {
@@ -19,7 +20,7 @@ export class AuthenticationService {
   auth0Profile: any;
   userProfile: UserProfile;
 
-  constructor(private router: Router, private userService: UserService) { }
+  constructor(private router: Router, private userService: UserService, private userProfileService: UserProfileService) { }
 
   public login(): void {
     this.auth0.authorize();
@@ -39,38 +40,34 @@ export class AuthenticationService {
     });
   }
 
-  public async getUserProfile(auth0Profile: auth0.Auth0UserProfile): Promise<UserProfile> {
-    var user = await this.userService.getUserByIdentityId(auth0Profile.sub).toPromise();
-    return {
-      id: user.id,
-      identityId: user.identityId,
-      userType: user.type,
-      name: auth0Profile.name,
-      pictureUrl: auth0Profile.picture,
-      username: auth0Profile.username
-    };
+  public async getUserProfile(auth0Profile: auth0.Auth0UserProfile) : Promise<UserProfile> {
+    let userProfile = await this.userProfileService.getUserByEmailAddress(auth0Profile.name).toPromise();
+    userProfile.identityId = auth0Profile.sub;
+    userProfile.pictureUrl = auth0Profile.picture;
+    userProfile.name = '';
+    return userProfile;
   }
 
   private redirectToModule(): void {
     const self = this;
     this.getProfile((err, auth0Profile) => {
-      let identityId = auth0Profile.sub;
-      this.userService.getUserByIdentityId(identityId).subscribe(user => {
-        switch(user.type){
-          case UserType.Administrator:
+      this.getUserProfile(auth0Profile).then(userProfile => {
+        self.userProfile = userProfile;
+        switch(userProfile.type) {
+          case UserType.Administrator: 
             self.router.navigate(['/admin']);
             break;
-          case UserType.Trainer:
+          case UserType.Trainer: 
             self.router.navigate(['/trainer']);
             break;
-          case UserType.Customer:
-          self.router.navigate(['/customer']);
+          case UserType.Customer: 
+            self.router.navigate(['/customer']);
             break;
-          default:
-          self.router.navigate(['/home']);
+          default: 
+            self.router.navigate(['/home']);
             break;
         }
-      }, err => console.log(err))
+      });
     });
   };
 

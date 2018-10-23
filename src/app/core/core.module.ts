@@ -21,6 +21,7 @@ import { CallbackComponent } from './callback/callback.component';
 import { ProfileComponent } from './profile/profile.component';
 import { UserService } from './services/user.service';
 import { SharedModule } from '../shared/shared.module';
+import { UserProfileService } from './services/user-profile.service';
 
 @NgModule({
   imports: [
@@ -51,7 +52,8 @@ import { SharedModule } from '../shared/shared.module';
     HttpProcessorService,
     Mapper,
     AuthenticationService,
-    UserService
+    UserService,
+    UserProfileService
   ]
 })
 export class CoreModule { }
