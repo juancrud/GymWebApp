@@ -5,5 +5,5 @@ export const apiBaseURL = 'https://juancrud-gym-api.herokuapp.com/';
 /* Auth0 */
 export const auth0ClientId = 'lH46jA1MPlkXOPswIh3fNSEsclM6Am4b';
 export const auth0Domain = 'juancrud.auth0.com';
-//export const auth0CallbackUrl = 'https://juancrud-gym-app.herokuapp.com/callback';
-export const auth0CallbackUrl = 'http://localhost:4200/callback';
+export const auth0CallbackUrl = 'https://juancrud-gym-app.herokuapp.com/callback';
+//export const auth0CallbackUrl = 'http://localhost:4200/callback';
