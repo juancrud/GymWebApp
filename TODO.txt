@@ -3,8 +3,8 @@ TASKS:
 
 * AdminModule:
 - Improve ALL Edit/Add forms*                       Gaby
-    -Create photo field. *
-    -Create input for uploading photo correctly
+    -Create photo field. *                          
+    -Create input for uploading photo correctly     
 - improve services implementations                  
 - date fields (UTC in server saved)                 
 - Add pictures *                                    

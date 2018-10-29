@@ -15,13 +15,13 @@ import { ExerciseCategoryService } from './services/exercise-category.service';
 import { ExerciseService } from './services/exercise.service';
 import { LoginComponent } from './login/login.component';
 import { HttpProcessorService } from './services/http-processor.service';
-import { Mapper } from './mappers/Mapper';
 import { AuthenticationService } from './services/authentication.service';
 import { CallbackComponent } from './callback/callback.component';
 import { ProfileComponent } from './profile/profile.component';
 import { UserService } from './services/user.service';
 import { SharedModule } from '../shared/shared.module';
 import { UserProfileService } from './services/user-profile.service';
+import { MapperService } from './services/mapper.service';
 
 @NgModule({
   imports: [
@@ -50,7 +50,7 @@ import { UserProfileService } from './services/user-profile.service';
     ExerciseCategoryService,
     ExerciseService,
     HttpProcessorService,
-    Mapper,
+    MapperService,
     AuthenticationService,
     UserService,
     UserProfileService
