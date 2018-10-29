@@ -1,18 +1,14 @@
 TASKS:
+-use environments.ts instead of Constants.ts
+
 * AdminModule:
-- handle httpErrors => errorComponent               JC      DONE
 - Improve ALL Edit/Add forms*                       Gaby
     -Create photo field. *
     -Create input for uploading photo correctly
-- Filters on Grid component                         Gaby
-- picture list component (view, data mapping)       Gaby
 - improve services implementations                  
-- Add Loading component into other components       
-- Exercises (+categories)                           
 - date fields (UTC in server saved)                 
 - Add pictures *                                    
 - improve form implementation                       
-- admin dashboard                                   
 
 * Login:
 * Trainers module:
