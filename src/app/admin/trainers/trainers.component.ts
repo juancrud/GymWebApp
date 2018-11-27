@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Trainer, TrainerStatus } from '../../core/models/Trainer';
 import { TrainerService } from '../../core/services/trainer.service';
 import { GridModel } from '../../core/models/GridModel';
-import { Mapper } from '../../core/mappers/Mapper';
+import { MapperService } from '../../core/services/mapper.service';
 
 @Component({
   selector: 'app-trainers',
@@ -13,7 +13,7 @@ export class TrainersComponent implements OnInit {
   trainers: Trainer[];
   error: Error;
 
-  constructor(private trainerService: TrainerService, private mapper: Mapper) { }
+  constructor(private trainerService: TrainerService, private mapperService: MapperService) { }
 
   ngOnInit() {
     this.trainerService.getTrainers()
@@ -29,7 +29,7 @@ export class TrainersComponent implements OnInit {
   }
 
   mapTrainers(): GridModel[] {
-    return this.trainers.map(x => this.mapper.mapTrainerToGridModel(x));
+    return this.trainers.map(x => this.mapperService.mapTrainerToGridModel(x));
   }
 
 }
